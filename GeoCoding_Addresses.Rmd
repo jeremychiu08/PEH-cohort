@@ -1,0 +1,109 @@
+---
+title: "GeoCodingAddress"
+author: "Nay Zaw Lin"
+date: "2025-04-01"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GeoCoding Addresses using phsuR
+```{r}
+#install.packages("remotes")
+#remotes::install_github("brbakos/phsuR")
+#install.packages("stringr")
+library(stringr)
+library(phsuR)
+library(readr)
+library(dplyr)
+
+# Load the CSV
+raw_data <- read_csv("data/sample addresses.csv", col_names = FALSE)
+
+# Extract the first column (addresses), remove NA values
+cleaned_data <- raw_data %>%
+  select(address = X1) %>%
+  filter(!is.na(address))
+
+# View the cleaned data
+print(head(cleaned_data))
+
+# Geocode and get regional data
+geocoded <- get_geocode_data(address = cleaned_data$address, faults = FALSE)
+
+#Select relevant address features
+elementized <- geocoded %>%
+  select(
+    address,
+    street_address,
+    unit_number,
+    locality_name,
+    province_code
+  )  %>%
+  mutate(
+    country = "Canada", 
+   
+  )
+
+# View result
+View(elementized)
+
+# Export to CSV
+#write_csv(elementized, "elementized_results.csv")
+```
+
+## GeoCoding Addresses (Elementized CSV)
+
+```{r}
+# Load required packages
+library(dplyr)
+library(readr)
+
+# Set input and output folders
+input_folder <- "input"
+output_folder <- "output"
+
+# Create output folder if it doesn't exist
+if (!dir.exists(output_folder)) {
+  dir.create(output_folder)
+}
+
+# Get list of CSV files in input folder
+csv_files <- list.files(input_folder, pattern = "\\.csv$", full.names = TRUE)
+
+# Loop multi files
+for (file in csv_files) {
+  # Read the CSV
+  df <- read_csv(file, show_col_types = FALSE)
+  
+  # Select columns
+  selected <- df %>%
+    select(
+      fullAddress,
+      unitNumber,
+      civicNumber,
+      streetName,
+      streetType,
+      localityName,
+      score,
+      matchPrecision,
+      precisionPoints
+    ) %>%
+    mutate(Province = "BC", .after = localityName)  # Add Province after localityName
+  
+  # Generate a 10-digit random number
+  rand_digits <- paste0(sample(0:9, 10, replace = TRUE), collapse = "")
+  
+  # Create output file path with new filename
+  output_file <- file.path(output_folder, paste0("job_", rand_digits, "_results.csv"))
+  
+  # Save cleaned data
+  write_csv(selected, output_file)
+}
+
+cat("Elementized CSV saved to:", output_folder, "\n")
+```
+
+
