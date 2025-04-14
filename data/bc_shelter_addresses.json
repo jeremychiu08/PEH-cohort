@@ -1,0 +1,5101 @@
+[
+  {
+    "address_text": "**, Kelowna, **",
+    "address": "**, Kelowna, **",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "**, Revelstoke, **",
+    "address": "**, Revelstoke, **",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "*, Abbotsford, *",
+    "address": "*, Abbotsford, *",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "*, Vernon,",
+    "address": "*, Vernon,",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1 Kingsway (Entrance off East 8th), Vancouver",
+    "address": "1 Kingsway (Entrance off East 8th)",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1 Kingsway, Vancouver",
+    "address": "1 Kingsway",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "101-45951 Trethewey Ave, Chilliwack",
+    "address": "101-45951 Trethewey Ave, Chilliwack",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10100 S Arm Pl, Richmond",
+    "address": "10100 S Arm Pl, Richmond",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10100 South Arm Place, Richmond",
+    "address": "10100 South Arm Place",
+    "city": "Richmond",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "103 Hastings Street E, Vancouver",
+    "address": "103 Hastings Street E, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1044 St. Georges Avenue, North Vancouver",
+    "address": "1044 St. Georges Avenue",
+    "city": "North Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1044 St. Georges Avenue, North Vancouver",
+    "address": "1044 St. Georges Avenue, North Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10453 Whalley Blvd, Surrey",
+    "address": "10453 Whalley Blvd",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10453 Whalley Blvd., Surrey",
+    "address": "10453 Whalley Blvd., Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1056 Comox St, Vancouver",
+    "address": "1056 Comox St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1056 Comox St, Vancouver",
+    "address": "1056 Comox St, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1060 Howe Street, Vancouver",
+    "address": "1060 Howe Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1060 Howe Street, Vancouver",
+    "address": "1060 Howe Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10607 King George Blvd., Surrey",
+    "address": "10607 King George Blvd., Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10635 King George Blvd, Surrey",
+    "address": "10635 King George Blvd, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10635 King George Boulevard, Surrey",
+    "address": "10635 King George Boulevard",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10666 City Park Way, Surrey",
+    "address": "10666 City Park Way",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10667 135A St, Surrey",
+    "address": "10667 135A St, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10667 135A Street, Surrey",
+    "address": "10667 135A Street",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10667 135A Street, Surrey",
+    "address": "10667 135A Street, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1069 Gordon Drive, Kelowna",
+    "address": "1069 Gordon Drive, Kelowna",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10731 City Parkway, Surrey",
+    "address": "10731 City Parkway, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "10776 King George Blvd, Surrey",
+    "address": "10776 King George Blvd, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "108 East Hastings Street, Vancouver",
+    "address": "108 East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "108 East Hastings Street, Vancouver",
+    "address": "108 East Hastings Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1080 3rd Ave West, Prince Rupert",
+    "address": "1080 3rd Ave West, Prince Rupert",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1081 Canada Ave, Duncan",
+    "address": "1081 Canada Ave, Duncan",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1083 Richter Street, Kelowna",
+    "address": "1083 Richter Street, Kelowna",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "11 W 10th Ave, Vancouver",
+    "address": "11 W 10th Ave",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "11 W. 10th Ave., Vancouver",
+    "address": "11 W. 10th Ave.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "11 West 10th Avenue, Vancouver",
+    "address": "11 West 10th Avenue, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1138 Burrard St., Vancouver",
+    "address": "1138 Burrard St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1138 Burrard Street, Vancouver",
+    "address": "1138 Burrard Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1138 Burrard Street, Vancouver",
+    "address": "1138 Burrard Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1140 River Street, Kamloops",
+    "address": "1140 River Street, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1151 2nd Avenue, Prince George",
+    "address": "1151 2nd Avenue, Prince George",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "11838 88 Avenue, Delta",
+    "address": "11838 88 Avenue, Delta",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "11838 88th Avenue, Delta",
+    "address": "11838 88th Avenue",
+    "city": "Delta",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1188 6th Ave, Prince George",
+    "address": "1188 6th Ave, Prince George",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "119 East Cordova St, Vancouver",
+    "address": "119 East Cordova St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "12040 Horseshoe Way, Richmond",
+    "address": "12040 Horseshoe Way",
+    "city": "Richmond",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "12040 Horseshoe Way, Richmond",
+    "address": "12040 Horseshoe Way, Richmond",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1206 8th Avenue, New Westminster",
+    "address": "1206 8th Avenue, New Westminster",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1221 Cedar Street, Campbell River",
+    "address": "1221 Cedar Street, Campbell River",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "124 Dunlevy Ave., Vancouver",
+    "address": "124 Dunlevy Ave.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1240 Yates St, Victoria",
+    "address": "1240 Yates St, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1240 Yates Street, Victoria",
+    "address": "1240 Yates Street, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1280 Seymour Street, Vancouver",
+    "address": "1280 Seymour Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1280 Seymour Street, Vancouver",
+    "address": "1280 Seymour Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1300 Pine Avenue, Trail",
+    "address": "1300 Pine Avenue, Trail",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1302 Seymour St, Vancouver",
+    "address": "1302 Seymour St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1302 Seymour St., Vancouver",
+    "address": "1302 Seymour St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1302 Seymour Street , Vancouver",
+    "address": "1302 Seymour Street , Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1302 Seymour Street, Vancouver",
+    "address": "1302 Seymour Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "131 Dunlevy Ave, Vancouver",
+    "address": "131 Dunlevy Ave, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "131 Dunlevy Avenue, Vancouver",
+    "address": "131 Dunlevy Avenue",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "13327 100A Avenue, Surrey",
+    "address": "13327 100A Avenue, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "13327 100A ave, Surrey",
+    "address": "13327 100A ave",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1342-C Shoppers Row, Campbell River",
+    "address": "1342-C Shoppers Row, Campbell River",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "13474 96 Ave, Surrey",
+    "address": "13474 96 Ave",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "13474 96 Avenue, Surrey",
+    "address": "13474 96 Avenue, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "13539 King George Blvd, Surrey",
+    "address": "13539 King George Blvd, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "13545 King George Blvd, Surrey",
+    "address": "13545 King George Blvd",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "140 Quebec St, Prince George",
+    "address": "140 Quebec St, Prince George",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "140 Quebec Street, Prince George",
+    "address": "140 Quebec Street, Prince George",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1401 102 Avenue , Dawson Creek",
+    "address": "1401 102 Avenue , Dawson Creek",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1401 Hornby Street, Vancouver",
+    "address": "1401 Hornby Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1401 Hornby Street, Vancouver",
+    "address": "1401 Hornby Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "141 E. Hastings St., Vancouver",
+    "address": "141 E. Hastings St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "141 East Hastings St, Vancouver",
+    "address": "141 East Hastings St, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "141 East Hastings Street, Vancouver",
+    "address": "141 East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1417 Cranbrook St N, Cranbrook",
+    "address": "1417 Cranbrook St N, Cranbrook",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "142 Tranquille Road, Kamloops",
+    "address": "142 Tranquille Road, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "14337/14347 108 Avenue, Surrey",
+    "address": "14337/14347 108 Avenue, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "144 George St, Prince George",
+    "address": "144 George St, Prince George",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1443 W 8th Ave, Vancouver",
+    "address": "1443 W 8th Ave",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1443 W. 8th Ave., Vancouver",
+    "address": "1443 W. 8th Ave.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1450 Elford Street, Victoria",
+    "address": "1450 Elford Street",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1450 Elford Street, Victoria",
+    "address": "1450 Elford Street, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "146 Carson Avenue, Quesnel",
+    "address": "146 Carson Avenue, Quesnel",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "14600 North Bluff Road, White Rock",
+    "address": "14600 North Bluff Road",
+    "city": "White Rock",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "14601 20 Ave, Surrey",
+    "address": "14601 20 Ave, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "14601 20th Avenue, Surrey",
+    "address": "14601 20th Avenue",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "14716 104 Avenue, Surrey",
+    "address": "14716 104 Avenue, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "14716 104th Avenue, Surrey",
+    "address": "14716 104th Avenue",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "15 Hastings Street West, Vancouver",
+    "address": "15 Hastings Street West, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1611 Quadra Street, Victoria",
+    "address": "1611 Quadra Street",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1611 Quadra Street, Victoria",
+    "address": "1611 Quadra Street, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1660 Columbia Avenue, Castlegar",
+    "address": "1660 Columbia Avenue, Castlegar",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1660 Columbia Avenue, Castlegar, V1N1H9",
+    "address": "1660 Columbia Avenue, Castlegar, V1N1H9",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1660 East Hastings Street, Vancouver",
+    "address": "1660 East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1660 East Hastings Street, Vancouver",
+    "address": "1660 East Hastings Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1661 McCallum Road, Abbotsford",
+    "address": "1661 McCallum Road, Abbotsford",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "167 Douglas Avenue, Fort St. James",
+    "address": "167 Douglas Avenue, Fort St. James",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1706 Main St., Penticton",
+    "address": "1706 Main St., Penticton",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1726 E. Hastings St., Vancouver",
+    "address": "1726 E. Hastings St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1726 East Hastings Street, Vancouver",
+    "address": "1726 East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1726 East Hastings, Vancouver",
+    "address": "1726 East Hastings, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1738 East Hastings Street, Vancouver",
+    "address": "1738 East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1738 East Hastings Street, Vancouver",
+    "address": "1738 East Hastings Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1755 Coldwater Avenue, Merritt",
+    "address": "1755 Coldwater Avenue, Merritt",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "17752 Colebrook Road, Surrey",
+    "address": "17752 Colebrook Road",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "17910 Colebrook Road, Surrey",
+    "address": "17910 Colebrook Road, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "181 Victoria Street W, Kamloops",
+    "address": "181 Victoria Street W, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1821 Sumas Way, Abbotsford",
+    "address": "1821 Sumas Way",
+    "city": "Abbotsford",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1821 Sumas Way, Abbotsford",
+    "address": "1821 Sumas Way, Abbotsford",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "19 Nicol Street, Nanaimo",
+    "address": "19 Nicol Street, Nanaimo",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "1906 15th Avenue West, Vancouver",
+    "address": "1906 15th Avenue West, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "201 Central Street, Vancouver",
+    "address": "201 Central Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "201 Central Street, Vancouver",
+    "address": "201 Central Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2039 Riverside Ave, Trail",
+    "address": "2039 Riverside Ave, Trail",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "205 East Hastings, Vancouver",
+    "address": "205 East Hastings, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2088 Yukon Street, Vancouver",
+    "address": "2088 Yukon Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2088 Yukon Street, Vancouver",
+    "address": "2088 Yukon Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2117 Vancouver Street, Victoria",
+    "address": "2117 Vancouver Street",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "22155 Lougheed Highway, Maple Ridge",
+    "address": "22155 Lougheed Highway",
+    "city": "Maple Ridge",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "22155 Lougheed Highway, Maple Ridge",
+    "address": "22155 Lougheed Highway, Maple Ridge",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "22188 Lougheed Highway, Maple Ridge",
+    "address": "22188 Lougheed Highway",
+    "city": "Maple Ridge",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "22188 Lougheed Highway, Maple Ridge",
+    "address": "22188 Lougheed Highway, Maple Ridge",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2294 Douglas Road, Burnaby",
+    "address": "2294 Douglas Road",
+    "city": "Burnaby",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2294 Douglas Road, Burnaby",
+    "address": "2294 Douglas Road, Burnaby",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2307 43 Street, Vernon",
+    "address": "2307 43 Street, Vernon",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "231 Regina Ave, Saanich",
+    "address": "231 Regina Ave, Saanich",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "231 Regina Street, Victoria",
+    "address": "231 Regina Street",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2317 Dowler Place, Victoria",
+    "address": "2317 Dowler Place, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2317 McKenzie Road, Abbotsford",
+    "address": "2317 McKenzie Road, Abbotsford",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2320 78th Ave, Grand Forks",
+    "address": "2320 78th Ave, Grand Forks",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2425 Oxford St, Vancouver",
+    "address": "2425 Oxford St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2425 Oxford St., Vancouver",
+    "address": "2425 Oxford St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2425 Oxford Street, Vancouver",
+    "address": "2425 Oxford Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "245 St Paul St, Kamloops",
+    "address": "245 St Paul St, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "245 St Paul Street, Kamloops",
+    "address": "245 St Paul Street, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2490 W. 37th Ave., Vancouver",
+    "address": "2490 W. 37th Ave.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2490 West 37th Ave, Vancouver",
+    "address": "2490 West 37th Ave",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2506 37th Street, Vernon",
+    "address": "2506 37th Street, Vernon",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "251 Leon Avenue, Kelowna",
+    "address": "251 Leon Avenue, Kelowna",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2515 Bartley Road, West Kelowna",
+    "address": "2515 Bartley Road, West Kelowna",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2579 Lewis Street, Duncan",
+    "address": "2579 Lewis Street, Duncan",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "259 Victoria Street West, Kamloops",
+    "address": "259 Victoria Street West, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "261 Hastings St E, Vancovuer",
+    "address": "261 Hastings St E, Vancovuer",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2616 Ware Street, Abbotsford",
+    "address": "2616 Ware Street",
+    "city": "Abbotsford",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2616 Ware Street, Abbotsford",
+    "address": "2616 Ware Street, Abbotsford",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "261B East Hastings Street, Vancouver",
+    "address": "261B East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "265 East Hastings Street, Vancouver",
+    "address": "265 East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "265 Hastings Street E, Vancouver",
+    "address": "265 Hastings Street E, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "268 Fulford-Ganges Road, Salt Spring Island",
+    "address": "268 Fulford-Ganges Road, Salt Spring Island",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "27 W. Hastings St., Vancouver",
+    "address": "27 W. Hastings St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "27 West Hastings Street, Vancouver",
+    "address": "27 West Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "27 West hastings Street, Vancouver",
+    "address": "27 West hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2702 Nicola Ave, Merritt",
+    "address": "2702 Nicola Ave, Merritt",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "271 Victoria Street West, Kamloops",
+    "address": "271 Victoria Street West, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "28 6th St, New Westminster",
+    "address": "28 6th St",
+    "city": "New Westminster",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "28- Sixth St.  , New Westminster",
+    "address": "28- Sixth St.  , New Westminster",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2812 Hall Street, Terrace",
+    "address": "2812 Hall Street, Terrace",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2822 Tetrault Street, Terrace",
+    "address": "2822 Tetrault Street, Terrace",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2884 Gladys Ave, Abbotsford",
+    "address": "2884 Gladys Ave",
+    "city": "Abbotsford",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2884 Gladys Avenue, Abbotsford",
+    "address": "2884 Gladys Avenue, Abbotsford",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2915 Douglas Street, Victoria",
+    "address": "2915 Douglas Street",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "2915 Douglas Street, Victoria",
+    "address": "2915 Douglas Street, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "301 Machleary Street, Nanaimo",
+    "address": "301 Machleary Street, Nanaimo",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "3030 Gordon Ave, Coquitlam",
+    "address": "3030 Gordon Ave, Coquitlam",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "3030 Gordon Avenue, Coquitlam",
+    "address": "3030 Gordon Avenue",
+    "city": "Coquitlam",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "3130 3rd Avenue, Port Alberni",
+    "address": "3130 3rd Avenue, Port Alberni",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "32 Elliot Street, New Westminster",
+    "address": "32 Elliot Street",
+    "city": "New Westminster",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "32 Elliot Street, New Westminster",
+    "address": "32 Elliot Street, New Westminster",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "320 Alexander St., Vancouver",
+    "address": "320 Alexander St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "320 Alexander Street, Vancouver",
+    "address": "320 Alexander Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "320 Alexander Street, Vancouver",
+    "address": "320 Alexander Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "325 Main Street, Vancouver",
+    "address": "325 Main Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "325 Main Street, Vancouver",
+    "address": "325 Main Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "32646 Logan Avenue, Mission",
+    "address": "32646 Logan Avenue",
+    "city": "Mission",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "32646 Logan Avenue, Mission",
+    "address": "32646 Logan Avenue, Mission",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "329 Powell Street, Vancouver",
+    "address": "329 Powell Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "329 Powell Street, Vancouver",
+    "address": "329 Powell Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "330 Alexander Street, Vancouver",
+    "address": "330 Alexander Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "333 E.16th Avenue, Vancouver",
+    "address": "333 E.16th Avenue, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "3360 Fraser St, Vancouver",
+    "address": "3360 Fraser St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "3360 Fraser St., Vancouver",
+    "address": "3360 Fraser St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "33933 Gladys Ave, Abbotsford",
+    "address": "33933 Gladys Ave",
+    "city": "Abbotsford",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "340 Alexander Street, Vancouver",
+    "address": "340 Alexander Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "3403 27 Avenue, Vernon",
+    "address": "3403 27 Avenue, Vernon",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "34081 Gladys Avenue, Abbotsford",
+    "address": "34081 Gladys Avenue",
+    "city": "Abbotsford",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "34081 Gladys Avenue, Abbotsford",
+    "address": "34081 Gladys Avenue, Abbotsford",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "341 Fraser Avenue Northwest, Salmon Arm",
+    "address": "341 Fraser Avenue Northwest, Salmon Arm",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "342 Alexander St, Vancouver",
+    "address": "342 Alexander St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "342 Alexander Street, Vancouver",
+    "address": "342 Alexander Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "34520 Lonzo Road, Abbotsford",
+    "address": "34520 Lonzo Road",
+    "city": "Abbotsford",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "34520 Lonzo Road, Abbotsford",
+    "address": "34520 Lonzo Road, Abbotsford",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "34561 Delair Rd., Abbotsford",
+    "address": "34561 Delair Rd.",
+    "city": "Abbotsford",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "34561 Delair Road, Abbotsford, VS2 5Y1",
+    "address": "34561 Delair Road, Abbotsford, VS2 5Y1",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "346 Alexander Street, Vancouver",
+    "address": "346 Alexander Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "346 Alexander Street, Vancouver",
+    "address": "346 Alexander Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "356 East Hastings Street, Vancouver",
+    "address": "356 East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "356 East Hastings, Vancouver",
+    "address": "356 East Hastings, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "375 E Pender St, Vancouver",
+    "address": "375 E Pender St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "375 E. Pender St., Vancouver",
+    "address": "375 E. Pender St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "37871 Third Avenue, Squamish",
+    "address": "37871 Third Avenue, Squamish",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "384 Main St., Vancouver",
+    "address": "384 Main St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "390 Main St, Vancouver",
+    "address": "390 Main St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "3939 8th Avenue, Port Alberni",
+    "address": "3939 8th Avenue, Port Alberni",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "3978 8th Avenue, Port Alberni",
+    "address": "3978 8th Avenue, Port Alberni",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "398 Powell Street, Vancouver",
+    "address": "398 Powell Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "398 Powell, Vancouver",
+    "address": "398 Powell",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "402 East Columbia Street, New Westminster",
+    "address": "402 East Columbia Street, New Westminster",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "402 Warren Avenue East, Penticton",
+    "address": "402 Warren Avenue East, Penticton",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "404 Alexander St, Vancouver",
+    "address": "404 Alexander St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "404 Alexander Street, Vancouver",
+    "address": "404 Alexander Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "412 East Cordova Street, Vancouver",
+    "address": "412 East Cordova Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "412 East Cordova Street, Vancouver",
+    "address": "412 East Cordova Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "425 Leon Ave, Kelowna",
+    "address": "425 Leon Ave, Kelowna",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "4444 Lakelse Avenue, Terrace",
+    "address": "4444 Lakelse Avenue, Terrace",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "450 E. Hastings St., Vancouver",
+    "address": "450 E. Hastings St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "450 East Hastings St, Vancouver",
+    "address": "450 East Hastings St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "45746 Yale Road, Chilliwack",
+    "address": "45746 Yale Road",
+    "city": "Chilliwack",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "45746 Yale Road, Chilliwack",
+    "address": "45746 Yale Road, Chilliwack",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "45748 Yale Road, Chilliwack",
+    "address": "45748 Yale Road, Chilliwack",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "45845 Wellington Ave, Chilliwack",
+    "address": "45845 Wellington Ave, Chilliwack",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "45845 Wellington Avenue, Chilliwack",
+    "address": "45845 Wellington Avenue",
+    "city": "Chilliwack",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "46 13th Avenue South, Cranbrook",
+    "address": "46 13th Avenue South, Cranbrook",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "46130 Margaret Avenue, Chilliwack",
+    "address": "46130 Margaret Avenue",
+    "city": "Chilliwack",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "46130 Margaret Avenue, Chilliwack",
+    "address": "46130 Margaret Avenue, Chilliwack",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "46130 Margret Avenue, Chilliwack",
+    "address": "46130 Margret Avenue",
+    "city": "Chilliwack",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "467 Alexander Street, Vancouver",
+    "address": "467 Alexander Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "467 Alexander Street, Vancouver",
+    "address": "467 Alexander Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "4746 Joyce Ave, Powell River",
+    "address": "4746 Joyce Ave, Powell River",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "480 City Centre, Kitimat",
+    "address": "480 City Centre, Kitimat",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "4903 48th Avenue, General Delivery, Fort Nelson",
+    "address": "4903 48th Avenue, General Delivery, Fort Nelson",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "4960 48th Avenue, Delta",
+    "address": "4960 48th Avenue",
+    "city": "Delta",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "4960 48th Avenue, Delta",
+    "address": "4960 48th Avenue, Delta",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "502 Columbia Street (access to Shelter is from Front Street), New Westminster",
+    "address": "502 Columbia Street (access to Shelter is from Front Street), New Westminster",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "502 Columbia Street, New Westminster",
+    "address": "502 Columbia Street",
+    "city": "New Westminster",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "520 Prideaux Street, Nanaimo",
+    "address": "520 Prideaux Street, Nanaimo",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "525  Johnson Street, Victoria",
+    "address": "525  Johnson Street, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "525 Johnson Street, Victoria",
+    "address": "525 Johnson Street",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "525 Johnson Street, Victoria",
+    "address": "525 Johnson Street, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "5301 South Access Road, Chetwynd",
+    "address": "5301 South Access Road, Chetwynd",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "5337 180 Street, Surrey",
+    "address": "5337 180 Street, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "535 Ellice Street, Victoria",
+    "address": "535 Ellice Street",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "535 Ellice Street, Victoria",
+    "address": "535 Ellice Street, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "55 Victoria Road, Nanaimo",
+    "address": "55 Victoria Road, Nanaimo",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "555 Homer St., Vancouver",
+    "address": "555 Homer St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "555 Homer Street, Vancouver",
+    "address": "555 Homer Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "555 Homer Street, Vancouver",
+    "address": "555 Homer Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "555B South Cedar Avenue, 100 Mile House",
+    "address": "555B South Cedar Avenue, 100 Mile House",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "5653 Wharf Ave, Sechelt",
+    "address": "5653 Wharf Ave, Sechelt",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "5653 Wharf Avenue, Sechelt",
+    "address": "5653 Wharf Avenue, Sechelt",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "5787 Langley Bypass, Langley",
+    "address": "5787 Langley Bypass",
+    "city": "Langley",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "5787 Langley Bypass, Langley",
+    "address": "5787 Langley Bypass, Langley",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "595 Townsite Rd, Nanaimo",
+    "address": "595 Townsite Rd, Nanaimo",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "600 Kingston Avenue, Kamloops",
+    "address": "600 Kingston Avenue, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "601 East Hastings Street, Vancouver",
+    "address": "601 East Hastings Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "609 Helmcken Street, Vancouver",
+    "address": "609 Helmcken Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "609 Helmcken Street, Vancouver",
+    "address": "609 Helmcken Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "616 Cordova Street East, Vancouver",
+    "address": "616 Cordova Street East, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "616 E. Cordova St., Vancouver",
+    "address": "616 E. Cordova St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "616 East Cordova Street, Vancouver",
+    "address": "616 East Cordova Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "631 1st Avenue, Ladysmith",
+    "address": "631 1st Avenue, Ladysmith",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "632 Pidcock Avenue, Courtenay",
+    "address": "632 Pidcock Avenue, Courtenay",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "650 Old Hope Princeton Highway, Hope",
+    "address": "650 Old Hope Princeton Highway",
+    "city": "Hope",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "650 Old Hope Princeton Way, Hope",
+    "address": "650 Old Hope Princeton Way, Hope",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "650 Old Hope Princeton, Hope",
+    "address": "650 Old Hope Princeton, Hope",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "6553 Portsmouth Road, Nanaimo",
+    "address": "6553 Portsmouth Road, Nanaimo",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "6595 King George Blvd, Surrey",
+    "address": "6595 King George Blvd, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "6595 King George Boulevard, Surrey",
+    "address": "6595 King George Boulevard",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "6750 West Coast Road, Sooke",
+    "address": "6750 West Coast Road, Sooke",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "682 Gibsons Way, Gibsons",
+    "address": "682 Gibsons Way, Gibsons",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "685 Cliff Avenue, Courtenay",
+    "address": "685 Cliff Avenue, Courtenay",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "690 Evergreen Road, Campbell River",
+    "address": "690 Evergreen Road, Campbell River",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "701 Ward Street , Nelson",
+    "address": "701 Ward Street , Nelson",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "702 Nicol Street, Nanaimo",
+    "address": "702 Nicol Street, Nanaimo",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "705 2nd St West, North Vancouver",
+    "address": "705 2nd St West",
+    "city": "North Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "705 2nd Street West, North Vancouver",
+    "address": "705 2nd Street West, North Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "705 2nd Street, North Vancouver",
+    "address": "705 2nd Street",
+    "city": "North Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "705 West 2nd Street, North Vancouver",
+    "address": "705 West 2nd Street, North Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "707 Powell Street, Vancouver",
+    "address": "707 Powell Street",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "707 Powell Street, Vancouver",
+    "address": "707 Powell Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7135 Walker Avenue, Burnaby",
+    "address": "7135 Walker Avenue",
+    "city": "Burnaby",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7135 Walker Avenue, Burnaby",
+    "address": "7135 Walker Avenue, Burnaby",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "715/725 Notre Dame Drive, Kamloops",
+    "address": "715/725 Notre Dame Drive, Kamloops",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7320 Buller Ave, Burnaby",
+    "address": "7320 Buller Ave",
+    "city": "Burnaby",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7320 Buller Avenue , Burnaby",
+    "address": "7320 Buller Avenue , Burnaby",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7320 Buller Avenue, Burnaby",
+    "address": "7320 Buller Avenue",
+    "city": "Burnaby",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "740 Carnarvon Street, New Westminster",
+    "address": "740 Carnarvon Street",
+    "city": "New Westminster",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "740 Carnarvon Street, New Westminster",
+    "address": "740 Carnarvon Street, New Westminster",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "748 Similkameen Avenue, Oliver",
+    "address": "748 Similkameen Avenue, Oliver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7540 6th St., Burnaby",
+    "address": "7540 6th St.",
+    "city": "Burnaby",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7540 6th Street, Burnaby",
+    "address": "7540 6th Street, Burnaby",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "76 5th Avenue, Lillooet",
+    "address": "76 5th Avenue, Lillooet",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7655 - 120 Street, Delta",
+    "address": "7655 - 120 Street, Delta",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7655 120th Street, Delta",
+    "address": "7655 120th Street",
+    "city": "Delta",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7840 Granville Ave, Richmond",
+    "address": "7840 Granville Ave",
+    "city": "Richmond",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "7840 Granville Avenue, Richmond",
+    "address": "7840 Granville Avenue, Richmond",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "8000 Nesters Road, Whistler",
+    "address": "8000 Nesters Road, Whistler",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "809 Burdett Avenue, Victoria",
+    "address": "809 Burdett Avenue",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "809 Burdett Avenue, Victoria",
+    "address": "809 Burdett Avenue, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "816 Vernon St, Nelson",
+    "address": "816 Vernon St, Nelson",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "816 Vernon Street, Nelson",
+    "address": "816 Vernon Street, Nelson",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "858 Ellis Street, Kelowna",
+    "address": "858 Ellis Street, Kelowna",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "8585 Hudson St, Vancouver",
+    "address": "8585 Hudson St",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "8585 Hudson St., Vancouver",
+    "address": "8585 Hudson St.",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "8585 Hudson Street, Vancouver",
+    "address": "8585 Hudson Street, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "870 Denman (enter on Haro St.), Vancouver",
+    "address": "870 Denman (enter on Haro St.)",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "Address",
+          "City"
+        ],
+        "file": "vancouver_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "870 Denman Street (Entrance on Haro st.), Vancouver",
+    "address": "870 Denman Street (Entrance on Haro st.)",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "875 Terminal Avenue, Vancouver",
+    "address": "875 Terminal Avenue",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "875 Terminal Avenue, Vancouver",
+    "address": "875 Terminal Avenue, Vancouver",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "919 Pandora Ave, Victoria",
+    "address": "919 Pandora Ave",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "919 Pandora Avenue, Victoria",
+    "address": "919 Pandora Avenue, Victoria",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "926 Pandora Ave, Victoria",
+    "address": "926 Pandora Ave",
+    "city": "Victoria",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "9683 137 Street, Surrey",
+    "address": "9683 137 Street, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "9810 Foxglove Drive, Surrey",
+    "address": "9810 Foxglove Drive, Surrey",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "9824 99 Avenue, Fort St. John",
+    "address": "9824 99 Avenue, Fort St. John",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "99 Third Avenue, Williams Lake",
+    "address": "99 Third Avenue, Williams Lake",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "B-402 Columbia Street East, New Westminster",
+    "address": "B-402 Columbia Street East, New Westminster",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "B-402 East Columbia Street, New Westminster",
+    "address": "B-402 East Columbia Street",
+    "city": "New Westminster",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "Pacific Community Church 5337 180 St, Surrey",
+    "address": "Pacific Community Church 5337 180 St",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "Phone for more details, Abbotsford,",
+    "address": "Phone for more details, Abbotsford,",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "Unit A - 7305 Market Street, Port Hardy",
+    "address": "Unit A - 7305 Market Street, Port Hardy",
+    "city": "",
+    "sources": [
+      {
+        "columns": [
+          "Address"
+        ],
+        "file": "emergency_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "Various sites, Coquitlam",
+    "address": "Various sites",
+    "city": "Coquitlam",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "address hidden, Abbotsford",
+    "address": "address hidden",
+    "city": "Abbotsford",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "address hidden, Maple Ridge",
+    "address": "address hidden",
+    "city": "Maple Ridge",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "address hidden, New Westminster",
+    "address": "address hidden",
+    "city": "New Westminster",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "address hidden, North Vancouver",
+    "address": "address hidden",
+    "city": "North Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "address hidden, Surrey",
+    "address": "address hidden",
+    "city": "Surrey",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  },
+  {
+    "address_text": "address hidden, Vancouver",
+    "address": "address hidden",
+    "city": "Vancouver",
+    "sources": [
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      },
+      {
+        "columns": [
+          "address",
+          "City"
+        ],
+        "file": "bc211_shelters.csv",
+        "sheet": ""
+      }
+    ]
+  }
+]
