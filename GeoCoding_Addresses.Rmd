@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## GeoCoding Addresses using phsuR
+
 ```{r}
 #install.packages("remotes")
 #remotes::install_github("brbakos/phsuR")
@@ -105,5 +106,3 @@ for (file in csv_files) {
 
 cat("Elementized CSV saved to:", output_folder, "\n")
 ```
-
-
