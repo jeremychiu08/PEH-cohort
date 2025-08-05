@@ -1,51 +1,41 @@
-ClientID,VisitID,PostalCodeAtVisit,EDVisitDate,EDFacilityShortName,EDFacility,is_homeless,is_homeless_phc
-3119634399,VISIT-3000,V6B 1B8,2024-04-01,VGH,Vancouver General Hospital,False,False
-4246059658,VISIT-3001,V6J 0E4,2023-07-16,VGH,Vancouver General Hospital,False,True
-4698408854,VISIT-3002,V6B 1L8,2023-07-31,VGH,Vancouver General Hospital,True,False
-8217611860,VISIT-3003,V6X 4A6,2024-01-09,VGH,Vancouver General Hospital,False,False
-3561557300,VISIT-3004,V7Y 1G5,2024-01-15,VGH,Vancouver General Hospital,False,False
-6947530309,VISIT-3005,V6B 3L9,2024-05-27,VGH,Vancouver General Hospital,True,False
-5047709743,VISIT-3006,V5L 2H5,2024-01-07,VGH,Vancouver General Hospital,False,False
-8519962896,VISIT-3007,V6B 2W9,2024-04-03,VGH,Vancouver General Hospital,False,False
-2461042543,VISIT-3008,V5K 2A1,2024-05-04,VGH,Vancouver General Hospital,False,False
-6555540744,VISIT-3009,V6B 3H7,2024-05-08,VGH,Vancouver General Hospital,False,False
-5974249674,VISIT-3010,V6Z 1M6,2023-09-13,VGH,Vancouver General Hospital,False,False
-8385972235,VISIT-3011,V6P 6G2,2024-02-12,VGH,Vancouver General Hospital,False,False
-4272602734,VISIT-3012,V6C 3B5,2024-01-11,VGH,Vancouver General Hospital,False,False
-7980611182,VISIT-3013,V6Z 2R5,2023-12-03,VGH,Vancouver General Hospital,False,False
-1854316681,VISIT-3014,V6Z 2P1,2023-08-08,VGH,Vancouver General Hospital,False,False
-4944899549,VISIT-3015,V6B 3L9,2023-11-06,VGH,Vancouver General Hospital,True,False
-7867414708,VISIT-3016,V6B 3L9,2024-01-29,VGH,Vancouver General Hospital,False,False
-3098545541,VISIT-3017,V6B 3H7,2024-02-22,VGH,Vancouver General Hospital,False,False
-8760038701,VISIT-3018,V6H 3S4,2023-06-18,VGH,Vancouver General Hospital,False,False
-2028439863,VISIT-3019,V6E 1A3,2024-05-13,VGH,Vancouver General Hospital,False,False
-1338258951,VISIT-3020,V5Z 3X7,2023-10-09,VGH,Vancouver General Hospital,True,False
-8438486479,VISIT-3021,V6E 3T3,2023-09-03,VGH,Vancouver General Hospital,False,True
-4504793184,VISIT-3022,V6Z 1L5,2024-03-18,VGH,Vancouver General Hospital,True,True
-1540137296,VISIT-3023,V6E 4B1,2024-05-25,VGH,Vancouver General Hospital,True,False
-8128575500,VISIT-3024,V6B 2J2,2024-05-16,VGH,Vancouver General Hospital,False,False
-6004182187,VISIT-3025,V6E 1A3,2023-06-10,VGH,Vancouver General Hospital,False,True
-7900268326,VISIT-3026,V6Z 2P1,2024-04-15,VGH,Vancouver General Hospital,False,False
-5141907136,VISIT-3027,V6B 1B8,2023-10-01,VGH,Vancouver General Hospital,False,False
-3962958940,VISIT-3028,V6E 1A3,2024-04-25,VGH,Vancouver General Hospital,False,False
-8357059814,VISIT-3029,V6C 3B5,2024-05-01,VGH,Vancouver General Hospital,False,True
-6898796145,VISIT-3030,V6Z 1L5,2024-05-05,VGH,Vancouver General Hospital,False,False
-2939118223,VISIT-3031,V6B 2W9,2023-07-25,VGH,Vancouver General Hospital,False,True
-2064746525,VISIT-3032,V5T 1R8,2024-03-17,VGH,Vancouver General Hospital,False,False
-5569956444,VISIT-3033,V6Z 2R5,2024-03-29,VGH,Vancouver General Hospital,False,False
-9680276057,VISIT-3034,V6H 3J5,2023-09-15,VGH,Vancouver General Hospital,False,False
-3379074819,VISIT-3035,V6Z 1W2,2023-11-11,VGH,Vancouver General Hospital,False,False
-3527331058,VISIT-3036,V6J 1S5,2024-02-08,VGH,Vancouver General Hospital,False,False
-1030884438,VISIT-3037,V6P 4Z4,2023-08-14,VGH,Vancouver General Hospital,False,False
-1252860896,VISIT-3038,V5L 2H5,2023-08-24,VGH,Vancouver General Hospital,False,False
-2419179580,VISIT-3039,V6J 1P3,2023-11-08,VGH,Vancouver General Hospital,False,False
-3208283728,VISIT-3040,V6J 1P3,2024-03-23,VGH,Vancouver General Hospital,False,False
-3084839399,VISIT-3041,V6J 1J8,2024-05-04,VGH,Vancouver General Hospital,False,True
-3315992115,VISIT-3042,V6E 1A3,2024-04-16,VGH,Vancouver General Hospital,False,False
-7769777475,VISIT-3043,V6Z 2P1,2023-12-20,VGH,Vancouver General Hospital,False,False
-2748309234,VISIT-3044,V6J 1G5,2023-06-28,VGH,Vancouver General Hospital,False,True
-1405126228,VISIT-3045,V6C 3B5,2024-03-04,VGH,Vancouver General Hospital,False,False
-8125276666,VISIT-3046,V6Z 2W6,2023-11-06,VGH,Vancouver General Hospital,False,True
-6816663775,VISIT-3047,V6P 4Z4,2024-04-01,VGH,Vancouver General Hospital,False,False
-7060638140,VISIT-3048,V6Z 2P1,2024-05-09,VGH,Vancouver General Hospital,False,True
-9822598054,VISIT-3049,V6J 1H4,2023-08-09,VGH,Vancouver General Hospital,False,False
+ClientID,PostalCode,City,StreetAddress1,StreetAddress2
+3746317213,V6P 4Z4,Vancouver,8038 Granville St,
+9697354961,V5T 3J7,Vancouver,355 Kingsway,
+2181241943,V6Z 2P1,Vancouver,723 Burrard St,
+1958682846,V6Z 2R5,Vancouver,1379 Howe St,
+4163119785,V5Z 3X7,Vancouver,City Square,
+9963334018,V6E 1C3,Vancouver,1225 Robson St,
+2812140441,V6Z 2R5,Vancouver,1379 Howe St,
+1127978094,V6Z 2P1,Vancouver,723 Burrard St,
+1939042955,V6B 2Y5,Vancouver,1220 Homer St,
+9703905715,V6P 6L6,Vancouver,1041 SW Marine Dr,
+7635473142,V6J 1G5,Vancouver,1834 W 1st Ave,
+6241752544,V6B 0N3,Vancouver,177 Robson St,
+7825844140,V6B 6A2,Vancouver,838 Hamilton St,
+4460967357,V5T 1W2,Vancouver,175 E Broadway Suite 309,
+8293453178,V6P 4Z4,Vancouver,8038 Granville St,
+6756332150,V5L 2H5,Vancouver,1795 Venables St,
+1667779376,V6B 1N2,Vancouver,675 W Hastings St #400,
+2445662585,V6E 1A3,Vancouver,1088 Alberni St,
+5693307665,V6J 1H4,Vancouver,1684 W 2nd Ave,
+5710360983,V6B 1H7,Vancouver,217 W Hastings St,
+8934927891,V5K 2A1,Vancouver,2889 E Hastings St,
+7887950851,V6P 4Z4,Vancouver,8038 Granville St,
+4466589567,V6E 3T3,Vancouver,1133 W Hastings St,
+8429141456,V6E 1C3,Vancouver,1225 Robson St,
+3303082117,V5L 2H5,Vancouver,1795 Venables St,
+2625792787,V6E 4B1,Vancouver,1285 W Pender St #700,
+7665963761,V6E 1C3,Vancouver,1225 Robson St,
+8995970241,V6Z 2W6,Vancouver,718 Drake St,
+3479708607,V5T 1W2,Vancouver,175 E Broadway Suite 309,
+4026113008,V6Z 2R5,Vancouver,1379 Howe St,
+9786748825,V6Z 2P1,Vancouver,723 Burrard St,
+5728765136,V6B 6A2,Vancouver,838 Hamilton St,
+6488854841,V6J 1H4,Vancouver,1684 W 2nd Ave,
+2566942273,V6B 2B3,Vancouver,475 Howe St,
+6884882440,V6E 4H1,Vancouver,1040 W Georgia St #280,
+3783290795,V6P 4Z4,Vancouver,8038 Granville St,
+4131575764,V6B 3H7,Vancouver,525 Seymour St Studio 611,
+5996775663,V6E 1A3,Vancouver,1088 Alberni St,
+6924716023,V6B 1N2,Vancouver,675 W Hastings St #400,
+3392080953,V5H 2W7,Vancouver,6083 McKay Ave,
