@@ -300,29 +300,29 @@ with tabs[1]:
         return result
 
     # --- Google API Key ---
-    API_KEY = 'AIzaSyBW9Q1Vr3MWHx_xnHsInkd9xmOnGj7LhaE'  # Replace with your actual API key
+    # API_KEY = ''  # Replace with your actual API key
 
-    # --- Function to get coordinates ---
-    def get_lat_lon(postal_code, country='Canada'):
-        url = 'https://maps.googleapis.com/maps/api/geocode/json'
-        params = {
-            'address': f'{postal_code}, {country}',
-            'key': API_KEY
-        }
+    # # --- Function to get coordinates ---
+    # def get_lat_lon(postal_code, country='Canada'):
+    #     url = 'https://maps.googleapis.com/maps/api/geocode/json'
+    #     params = {
+    #         'address': f'{postal_code}, {country}',
+    #         'key': API_KEY
+    #     }
 
-        try:
-            response = requests.get(url, params=params)
-            data = response.json()
+    #     try:
+    #         response = requests.get(url, params=params)
+    #         data = response.json()
 
-            if data['status'] == 'OK':
-                location = data['results'][0]['geometry']['location']
-                return location['lat'], location['lng']
-            else:
-                print(f"[Google API] Error for {postal_code}: {data['status']}")
-                return None, None
-        except Exception as e:
-            print(f"[Error] {postal_code}: {e}")
-            return None, None
+    #         if data['status'] == 'OK':
+    #             location = data['results'][0]['geometry']['location']
+    #             return location['lat'], location['lng']
+    #         else:
+    #             print(f"[Google API] Error for {postal_code}: {data['status']}")
+    #             return None, None
+    #     except Exception as e:
+    #         print(f"[Error] {postal_code}: {e}")
+    #         return None, None
     
     # =================================================================
     # CENTRALIZED DATE UTILITY FUNCTIONS
@@ -410,7 +410,6 @@ with tabs[1]:
                 
             df_tmp = df[selected_col]
             # Combine address lines into one
-            #df["fullAddress"] = df_tmp.fillna("").agg(" ".join, axis=1).str.strip()
             df["fullAddress"] = df_tmp.fillna("").agg(lambda x: ", ".join([str(v) for v in x if str(v).strip()]), axis=1)
             
             api_key = "ZX12-HA39-BE19-ZZ84"
@@ -418,33 +417,33 @@ with tabs[1]:
             parsed = {}
             for _, row in df.iterrows():
                 full_address = row["fullAddress"]
-                precision = row.get("PrecisionPoints", 0)
+                # precision = row.get("PrecisionPoints", 0)
                 
-                if precision >= 99:
-                    try:
-                        addr_id = find_address(api_key, full_address)
-                        if addr_id:
-                            parsed_raw = retrieve_full_address(api_key, addr_id)
-                            parsed = {
-                                "E_SubBuilding": parsed_raw.get("SubBuilding", ""),
-                                "E_BuildingNumber": parsed_raw.get("BuildingNumber", ""),
-                                "E_Street": parsed_raw.get("Street", ""),
-                                "E_StreetType": parsed_raw.get("StreetType", ""),
-                                "E_City": parsed_raw.get("City", ""),
-                                "E_ProvinceCode": parsed_raw.get("ProvinceCode", ""),
-                                "E_PostalCode": parsed_raw.get("PostalCode", ""),
-                                "E_Country": parsed_raw.get("CountryName", "")
-                            }
-                        else:
-                            parsed = {}
-                            parsed = parse_address_fallback(full_address)
-                    except Exception:
+                # if precision >= 99:
+                try:
+                    addr_id = find_address(api_key, full_address)
+                    if addr_id:
+                        parsed_raw = retrieve_full_address(api_key, addr_id)
+                        parsed = {
+                            "E_SubBuilding": parsed_raw.get("SubBuilding", ""),
+                            "E_BuildingNumber": parsed_raw.get("BuildingNumber", ""),
+                            "E_Street": parsed_raw.get("Street", ""),
+                            "E_StreetType": parsed_raw.get("StreetType", ""),
+                            "E_City": parsed_raw.get("City", ""),
+                            "E_ProvinceCode": parsed_raw.get("ProvinceCode", ""),
+                            "E_PostalCode": parsed_raw.get("PostalCode", ""),
+                            "E_Country": parsed_raw.get("CountryName", "")
+                        }
+                    else:
                         parsed = {}
                         parsed = parse_address_fallback(full_address)
-                else:
-                    # Fallback to basic parsing for low-precision data
+                except Exception:
                     parsed = {}
                     parsed = parse_address_fallback(full_address)
+                # else:
+                #     # Fallback to basic parsing for low-precision data
+                #     parsed = {}
+                #     parsed = parse_address_fallback(full_address)
                 elementized_data.append(parsed)
                 #time.sleep(0.2)  # Avoid rate limits
 
