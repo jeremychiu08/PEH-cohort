@@ -1,6 +1,0 @@
-unitNumber,civicNumber,streetName,streetType,streetDirection,provinceCode,localityName,postalCode,matchPrecision,precisionPoints
-,268,Fulford-Ganges,Rd,,BC,Salt Spring Island,,CIVIC_NUMBER,100
-,108,Hastings,St,E,BC,Vancouver,,CIVIC_NUMBER,100
-,1240,Yates,St,,BC,Victoria,,CIVIC_NUMBER,100
-,5653,Wharf,Ave,,BC,Sechelt,,CIVIC_NUMBER,100
-,390,Main,St,,BC,Vancouver,,CIVIC_NUMBER,100
