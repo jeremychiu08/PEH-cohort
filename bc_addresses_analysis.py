@@ -6,12 +6,15 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 from catboost import CatBoostClassifier
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder, StandardScaler, LabelEncoder
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 import xgboost as xgb
+import lightgbm as lgb
 from sklearn import metrics
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 
 import urllib.parse
 import urllib.request
@@ -185,144 +188,30 @@ with tabs[0]:
 
 # EDA Tab
 with tabs[1]:
-    # --- Canada Post AddressComplete API functions ---
-    def find_address(Key, SearchTerm):
-        base_url = "http://ws1.postescanada-canadapost.ca/AddressComplete/Interactive/Find/v2.10/xmla.ws?"
+    # --- Google API Key ---
+    API_KEY = 'AIzaSyAVgeE8kgcQuC7ocY-8-Dev1NetLiIA3_8'  # Replace with your API key. Current Key will expire on 2025-09-01
+
+    # --- Function to get coordinates ---
+    def get_lat_lon(postal_code, country='Canada'):
+        url = 'https://maps.googleapis.com/maps/api/geocode/json'
         params = {
-            "Key": Key,
-            "SearchTerm": SearchTerm,
-            "Country": "CAN",
-            "LanguagePreference": "EN",
-            "MaxSuggestions": "1",
-            "MaxResults": "1"
-        }
-        url = base_url + urllib.parse.urlencode(params)
-        with urllib.request.urlopen(url) as response:
-            xml_data = response.read()
-
-        doc = xml.dom.minidom.parseString(xml_data)
-        data_nodes = doc.getElementsByTagName("Row")
-        if not data_nodes:
-            return None
-
-        id = data_nodes[0].getAttribute("Id")
-        next_action = data_nodes[0].getAttribute("Next")
-
-        # Loop if more steps are needed
-        while next_action == "Find":
-            params = {
-                "Key": Key,
-                "SearchTerm": "",
-                "LastId": id,
-                "Country": "CAN",
-                "LanguagePreference": "EN",
-                "MaxSuggestions": "1",
-                "MaxResults": "1"
-            }
-            url = base_url + urllib.parse.urlencode(params)
-            with urllib.request.urlopen(url) as response:
-                xml_data = response.read()
-
-            doc = xml.dom.minidom.parseString(xml_data)
-            data_nodes = doc.getElementsByTagName("Row")
-            if not data_nodes:
-                return None
-
-            id = data_nodes[0].getAttribute("Id")
-            next_action = data_nodes[0].getAttribute("Next")
-
-        return id
-
-    def retrieve_full_address(Key, Id):
-        base_url = "http://ws1.postescanada-canadapost.ca/AddressComplete/Interactive/Retrieve/v2.11/xmla.ws?"
-        params = {
-            "Key": Key,
-            "Id": Id
-        }
-        url = base_url + urllib.parse.urlencode(params)
-        with urllib.request.urlopen(url) as response:
-            xml_data = response.read()
-        doc = xml.dom.minidom.parseString(xml_data)
-        schema_nodes = doc.getElementsByTagName("Column")
-        data_nodes = doc.getElementsByTagName("Row")
-        if not data_nodes:
-            return None
-
-        row = {
-            col.getAttribute("Name"): data_nodes[0].getAttribute(col.getAttribute("Name"))
-            for col in schema_nodes
-        }
-        return row
-
-    def parse_address_fallback(full_address):
-        result = {
-        'E_SubBuilding': '',
-        'E_BuildingNumber': '',
-        'E_Street': '',
-        'E_StreetType': '',
-        'E_City': '',
-        'E_ProvinceCode': 'BC',  # Always BC
-        'E_PostalCode': '',
-        'E_Country': ''
+            'address': f'{postal_code}, {country}',
+            'key': API_KEY
         }
 
         try:
-            parts = [p.strip() for p in full_address.split(',') if p.strip()]
-            if len(parts) >= 4:
-                # Example: ["1666 W 75th Ave", "V6P 6G2", "Vancouver", "Canada"]
-                street_part = parts[0]
-                result['E_PostalCode'] = parts[1]
-                result['E_City'] = parts[2]
-                result['E_Country'] = parts[3]
-            elif len(parts) == 3:
-                street_part, result['E_PostalCode'], result['E_City'] = parts
-                result['E_Country'] = "Canada"
-            elif len(parts) == 2:
-                street_part, result['E_PostalCode'] = parts
-                result['E_Country'] = "Canada"
+            response = requests.get(url, params=params)
+            data = response.json()
+
+            if data['status'] == 'OK':
+                location = data['results'][0]['geometry']['location']
+                return location['lat'], location['lng']
             else:
-                street_part = parts[0]
-
-            # Parse street line: e.g., "409 Granville St #256"
-            match = re.match(
-                r"(\d+)\s+([\w\s]+?)\s+(St|Ave|Street|Avenue|Blvd|Rd|Road|Dr|Drive|Way|Lane|Ln|Cres|Pl|Place|Court|Ct)\s*(#\d+)?",
-                street_part.strip()
-            )
-            if match:
-                result['E_BuildingNumber'] = match.group(1)
-                result['E_Street'] = match.group(2).strip()
-                result['E_StreetType'] = match.group(3)
-                result['E_SubBuilding'] = match.group(4) if match.group(4) else ''
-
+                print(f"[Google API] Error for {postal_code}: {data['status']}")
+                return None, None
         except Exception as e:
-            print(f"Fallback parsing failed: {e}")
-
-        return result
-
-    # --- Google API Key ---
-    # API_KEY = ''  # Replace with your actual API key
-
-    # # --- Function to get coordinates ---
-    # def get_lat_lon(postal_code, country='Canada'):
-    #     url = 'https://maps.googleapis.com/maps/api/geocode/json'
-    #     params = {
-    #         'address': f'{postal_code}, {country}',
-    #         'key': API_KEY
-    #     }
-
-    #     try:
-    #         response = requests.get(url, params=params)
-    #         data = response.json()
-
-    #         if data['status'] == 'OK':
-    #             location = data['results'][0]['geometry']['location']
-    #             return location['lat'], location['lng']
-    #         else:
-    #             print(f"[Google API] Error for {postal_code}: {data['status']}")
-    #             return None, None
-    #     except Exception as e:
-    #         print(f"[Error] {postal_code}: {e}")
-    #         return None, None
+            print(f"[Error] {postal_code}: {e}")
+            return None, None
     
     # =================================================================
     # CENTRALIZED DATE UTILITY FUNCTIONS
@@ -398,60 +287,231 @@ with tabs[1]:
             st.warning("⚠️ Please upload a dataset first.")
             selected_col = []
 
-    if st.checkbox("Elementize the Addresses?"):
-        if st.session_state.tables and 'selected_col' in locals() and selected_col:
-            # Use the same table selected above
-            table_keys = list(st.session_state.tables.keys())
-            if 'selected_table' in locals():
-                df = st.session_state.tables[selected_table].copy()
-            else:
-                # Fallback to first table if no table was selected
-                df = st.session_state.tables[table_keys[0]].copy()
-                
-            df_tmp = df[selected_col]
-            # Combine address lines into one
-            df["fullAddress"] = df_tmp.fillna("").agg(lambda x: ", ".join([str(v) for v in x if str(v).strip()]), axis=1)
-            
-            api_key = "ZX12-HA39-BE19-ZZ84"
-            elementized_data = []
-            parsed = {}
-            for _, row in df.iterrows():
-                full_address = row["fullAddress"]
-                # precision = row.get("PrecisionPoints", 0)
-                
-                # if precision >= 99:
-                try:
-                    addr_id = find_address(api_key, full_address)
-                    if addr_id:
-                        parsed_raw = retrieve_full_address(api_key, addr_id)
-                        parsed = {
-                            "E_SubBuilding": parsed_raw.get("SubBuilding", ""),
-                            "E_BuildingNumber": parsed_raw.get("BuildingNumber", ""),
-                            "E_Street": parsed_raw.get("Street", ""),
-                            "E_StreetType": parsed_raw.get("StreetType", ""),
-                            "E_City": parsed_raw.get("City", ""),
-                            "E_ProvinceCode": parsed_raw.get("ProvinceCode", ""),
-                            "E_PostalCode": parsed_raw.get("PostalCode", ""),
-                            "E_Country": parsed_raw.get("CountryName", "")
-                        }
-                    else:
-                        parsed = {}
-                        parsed = parse_address_fallback(full_address)
-                except Exception:
-                    parsed = {}
-                    parsed = parse_address_fallback(full_address)
-                # else:
-                #     # Fallback to basic parsing for low-precision data
-                #     parsed = {}
-                #     parsed = parse_address_fallback(full_address)
-                elementized_data.append(parsed)
-                #time.sleep(0.2)  # Avoid rate limits
+    # Initialize session state for elementization checkbox
+    if 'elementize_checkbox_state' not in st.session_state:
+        st.session_state.elementize_checkbox_state = False
+    if 'elementization_completed' not in st.session_state:
+        st.session_state.elementization_completed = False
+    if 'elementized_data_cache' not in st.session_state:
+        st.session_state.elementized_data_cache = None
+    
+    if 'start_elementization' not in st.session_state:
+        st.session_state.start_elementization = False
 
-            # --- Step 3: Merge parsed data and drop address lines ---
-            address_df = pd.DataFrame(elementized_data)
-            df.reset_index(drop=True, inplace=True)
-            final_df = pd.concat([df, address_df], axis=1)
-            final_df.drop(columns=["fullAddress"], errors="ignore", inplace=True)
+    # --- Canada Post AddressComplete API functions ---
+    def find_address(Key, SearchTerm):
+        base_url = "http://ws1.postescanada-canadapost.ca/AddressComplete/Interactive/Find/v2.10/xmla.ws?"
+        params = {
+            "Key": Key,
+            "SearchTerm": SearchTerm,
+            "Country": "CAN",
+            "LanguagePreference": "EN",
+            "MaxSuggestions": "1",
+            "MaxResults": "1"
+        }
+        url = base_url + urllib.parse.urlencode(params)
+        with urllib.request.urlopen(url) as response:
+            xml_data = response.read()
+
+        doc = xml.dom.minidom.parseString(xml_data)
+        data_nodes = doc.getElementsByTagName("Row")
+        if not data_nodes:
+            return None
+
+        id = data_nodes[0].getAttribute("Id")
+        next_action = data_nodes[0].getAttribute("Next")
+
+        # Loop if more steps are needed
+        loop_count = 0
+        while next_action == "Find":
+            loop_count += 1
+            
+            params = {
+                "Key": Key,
+                "SearchTerm": "",
+                "LastId": id,
+                "Country": "CAN",
+                "LanguagePreference": "EN",
+                "MaxSuggestions": "1",
+                "MaxResults": "1"
+            }
+            url = base_url + urllib.parse.urlencode(params)
+            with urllib.request.urlopen(url) as response:
+                xml_data = response.read()
+
+            doc = xml.dom.minidom.parseString(xml_data)
+            data_nodes = doc.getElementsByTagName("Row")
+            if not data_nodes:
+                return None
+
+            id = data_nodes[0].getAttribute("Id")
+            next_action = data_nodes[0].getAttribute("Next")
+            
+        return id
+
+    def retrieve_full_address(Key, Id):
+       
+        base_url = "http://ws1.postescanada-canadapost.ca/AddressComplete/Interactive/Retrieve/v2.11/xmla.ws?"
+        params = {
+            "Key": Key,
+            "Id": Id
+        }
+        url = base_url + urllib.parse.urlencode(params)
+        with urllib.request.urlopen(url) as response:
+            xml_data = response.read()
+        doc = xml.dom.minidom.parseString(xml_data)
+        schema_nodes = doc.getElementsByTagName("Column")
+        data_nodes = doc.getElementsByTagName("Row")
+        if not data_nodes:
+            return None
+
+        row = {
+            col.getAttribute("Name"): data_nodes[0].getAttribute(col.getAttribute("Name"))
+            for col in schema_nodes
+        }
+        return row
+
+    def parse_address_fallback(full_address):
+       
+        result = {
+        'E_SubBuilding': '',
+        'E_BuildingNumber': '',
+        'E_Street': '',
+        'E_StreetType': '',
+        'E_City': '',
+        'E_ProvinceCode': 'BC',  # Always BC
+        'E_PostalCode': '',
+        'E_Country': ''
+        }
+
+        try:
+            parts = [p.strip() for p in full_address.split(',') if p.strip()]
+            if len(parts) >= 4:
+                # Example: ["1666 W 75th Ave", "V6P 6G2", "Vancouver", "Canada"]
+                street_part = parts[0]
+                result['E_PostalCode'] = parts[1]
+                result['E_City'] = parts[2]
+                result['E_Country'] = parts[3]
+            elif len(parts) == 3:
+                street_part, result['E_PostalCode'], result['E_City'] = parts
+                result['E_Country'] = "Canada"
+            elif len(parts) == 2:
+                street_part, result['E_PostalCode'] = parts
+                result['E_Country'] = "Canada"
+            else:
+                street_part = parts[0]
+
+            # Parse street line: e.g., "409 Granville St #256"
+            match = re.match(
+                r"(\d+)\s+([\w\s]+?)\s+(St|Ave|Street|Avenue|Blvd|Rd|Road|Dr|Drive|Way|Lane|Ln|Cres|Pl|Place|Court|Ct)\s*(#\d+)?",
+                street_part.strip()
+            )
+            if match:
+                result['E_BuildingNumber'] = match.group(1)
+                result['E_Street'] = match.group(2).strip()
+                result['E_StreetType'] = match.group(3)
+                result['E_SubBuilding'] = match.group(4) if match.group(4) else ''
+
+        except Exception as e:
+            print(f"Fallback parsing failed: {e}")
+
+        return result
+        
+        
+    if st.checkbox("Elementize the Addresses?", key="elementize_addresses_checkbox"):
+        st.session_state.elementize_checkbox_state = True
+        
+        # Add button to control API execution
+        if st.button("🚀 Start Address Elementization", key="start_elementization_btn"):
+            st.session_state.start_elementization = True
+        
+        if st.session_state.tables and 'selected_col' in locals() and selected_col:
+            # Check if we already have cached results for this configuration
+            current_config = {
+                'table': selected_table,
+                'columns': selected_col,
+                'table_data_hash': hash(str(st.session_state.tables[selected_table].values.tobytes()))
+            }
+            
+            # Only run API calls if button was clicked AND (configuration changed or not completed)
+            if (st.session_state.start_elementization and 
+                (not st.session_state.elementization_completed or 
+                st.session_state.get('last_elementize_config') != current_config)):
+                
+                # Use the same table selected above
+                table_keys = list(st.session_state.tables.keys())
+                if 'selected_table' in locals():
+                    df = st.session_state.tables[selected_table].copy()
+                else:
+                    # Fallback to first table if no table was selected
+                    df = st.session_state.tables[table_keys[0]].copy()
+                    
+                df_tmp = df[selected_col]
+                # Combine address lines into one
+                df["fullAddress"] = df_tmp.fillna("").agg(lambda x: ", ".join([str(v) for v in x if str(v).strip()]), axis=1)
+                
+                api_key = "HW69-DD53-MU77-UY93" # Replace with your own API Key
+                elementized_data = []
+                parsed = {}
+                api_call_count = 0  # Track API calls
+                
+                st.info(f"🔄 Processing {len(df)} addresses with Canada Post API...")
+                progress_bar = st.progress(0)
+                
+                for idx, (_, row) in enumerate(df.iterrows()):
+                    full_address = row["fullAddress"]
+                    
+                    # Update progress
+                    progress_bar.progress((idx + 1) / len(df))
+                    
+                    try:
+                        addr_id = find_address(api_key, full_address)
+                        api_call_count += 1  # Count the find_address call
+                        
+                        if addr_id:
+                            parsed_raw = retrieve_full_address(api_key, addr_id)
+                            api_call_count += 1  # Count the retrieve_full_address call
+                            parsed = {
+                                "E_SubBuilding": parsed_raw.get("SubBuilding", ""),
+                                "E_BuildingNumber": parsed_raw.get("BuildingNumber", ""),
+                                "E_Street": parsed_raw.get("Street", ""),
+                                "E_StreetType": parsed_raw.get("StreetType", ""),
+                                "E_City": parsed_raw.get("City", ""),
+                                "E_ProvinceCode": parsed_raw.get("ProvinceCode", ""),
+                                "E_PostalCode": parsed_raw.get("PostalCode", ""),
+                                "E_Country": parsed_raw.get("CountryName", "")
+                            }
+                        else:
+                            parsed = parse_address_fallback(full_address)
+                    except Exception as e:
+                        parsed = parse_address_fallback(full_address)
+                    
+                    elementized_data.append(parsed)
+                
+                # Show API usage summary
+                st.info(f"📊 **API Usage Summary:** Made {api_call_count} total API calls for {len(df)} addresses")
+
+                # --- Step 3: Merge parsed data and drop address lines ---
+                address_df = pd.DataFrame(elementized_data)
+                df.reset_index(drop=True, inplace=True)
+                final_df = pd.concat([df, address_df], axis=1)
+                final_df.drop(columns=["fullAddress"], errors="ignore", inplace=True)
+                
+                # Cache the results
+                st.session_state.elementized_data_cache = final_df.copy()
+                st.session_state.elementization_completed = True
+                st.session_state.last_elementize_config = current_config
+                # Reset button state after processing
+                st.session_state.start_elementization = False
+                
+            else:
+                # Use cached results only if they exist
+                if st.session_state.elementized_data_cache is not None:
+                    final_df = st.session_state.elementized_data_cache.copy()
+                    st.info("✅ Using cached elementization results (no API calls needed)")
+                else:
+                    # No cached data and button not clicked - show instructions
+                    st.info("👆 Click the '🚀 Start Address Elementization' button above to process the addresses with Canada Post API")
 
             st.dataframe(final_df.head())
             
@@ -482,6 +542,12 @@ with tabs[1]:
             st.warning("⚠️ Please select a table and address columns first.")
             df1 = pd.DataFrame()  # Empty dataframe as fallback
             flag = 0
+    else:
+        # Elementization checkbox is unchecked - reset state
+        st.session_state.elementize_checkbox_state = False
+        if st.session_state.elementization_completed:
+            st.session_state.elementization_completed = False
+            st.session_state.elementized_data_cache = None
 
     if st.checkbox("Merge Discharge to emergency visit records?"):
         if st.session_state.tables and len(st.session_state.tables) >= 2:
@@ -712,61 +778,59 @@ with tabs[1]:
         else:
             st.warning("⚠️ You need at least 2 tables uploaded to perform a merge operation.")
     
-    # COMMENTED OUT - Get coordinate from an address postalcode function
-    # if st.checkbox("Get coordinate from an address postalcode? (via Google API)"):
-    #     if flag == 1 and 'final_df' in locals():
-    #         temp_df = final_df.copy()
-    #     elif selected_table and not df.empty:
-    #         temp_df = df.copy()
-    #     else:
-    #         st.warning("⚠️ Please select a table first or elementize addresses.")
-    #         temp_df = pd.DataFrame()
+    if st.checkbox("Get coordinate from an address postalcode? (via Google API)"):
+        if flag == 1 and 'final_df' in locals():
+            temp_df = final_df.copy()
+        elif selected_table and not df.empty:
+            temp_df = df.copy()
+        else:
+            st.warning("⚠️ Please select a table first or elementize addresses.")
+            temp_df = pd.DataFrame()
 
-    #     if not temp_df.empty:
-    #         # --- Ensure postalCode exists ---
-    #         if 'PostalCode' not in temp_df.columns:
-    #             st.error("❌ PostalCode column not found in dataset.")
-    #         else:
-    #             # --- Get unique postal codes ---
-    #             unique_postals = temp_df['PostalCode'].dropna().astype(str).unique()
-    #             # --- Map postal codes to coordinates ---
-    #             postal_to_coords = {}
-    #             for pc in unique_postals:
-    #                 if pc.strip():
-    #                     lat, lon = get_lat_lon(pc)
-    #                     postal_to_coords[pc] = (lat, lon)
-    #                     time.sleep(0.2)  # Rate limiting
+        if not temp_df.empty:
+            # --- Ensure postalCode exists ---
+            if 'E_PostalCode' not in temp_df.columns:
+                st.error("❌ E_PostalCode column not found in dataset.")
+            else:
+                # --- Get unique postal codes ---
+                unique_postals = temp_df['E_PostalCode'].dropna().astype(str).unique()
+                # --- Map postal codes to coordinates ---
+                postal_to_coords = {}
+                for pc in unique_postals:
+                    if pc.strip():
+                        lat, lon = get_lat_lon(pc)
+                        postal_to_coords[pc] = (lat, lon)
+                        time.sleep(0.2)  # Rate limiting
 
-    #             # --- Append lat/lon to temp_df ---
-    #             temp_df['Latitude'] = temp_df['PostalCode'].astype(str).map(lambda x: postal_to_coords.get(x, (None, None))[0])
-    #             temp_df['Longitude'] = temp_df['PostalCode'].astype(str).map(lambda x: postal_to_coords.get(x, (None, None))[1])
-    #             st.dataframe(temp_df.head())
+                # --- Append lat/lon to temp_df ---
+                temp_df['Latitude'] = temp_df['E_PostalCode'].astype(str).map(lambda x: postal_to_coords.get(x, (None, None))[0])
+                temp_df['Longitude'] = temp_df['E_PostalCode'].astype(str).map(lambda x: postal_to_coords.get(x, (None, None))[1])
+                st.dataframe(temp_df.head())
                 
-    #             # Update final_df with coordinates
-    #             final_df = temp_df.copy()
-    #             st.session_state.final_df = final_df.copy()
-    #     else:
-    #         # If coordinate generation is checked but no valid data
-    #         if selected_table and not df.empty:
-    #             st.session_state.final_df = df.copy()
-    #         else:
-    #             st.session_state.final_df = pd.DataFrame()
-    # else:
-    #     # If coordinate generation is not checked, use the selected table or elementized data
-    #     if flag == 1 and 'final_df' in locals():
-    #         st.session_state.final_df = final_df.copy()
-    #     elif selected_table and not df.empty:
-    #         st.session_state.final_df = df.copy()
-    #     else:
-    #         st.session_state.final_df = pd.DataFrame()
-
-    # Fallback for final_df when coordinate generation is commented out
-    if flag == 1 and 'final_df' in locals():
-        st.session_state.final_df = final_df.copy()
-    elif selected_table and not df.empty:
-        st.session_state.final_df = df.copy()
+                # Update final_df with coordinates
+                final_df = temp_df.copy()
+                st.session_state.final_df = final_df.copy()
+                
+                # Auto-save the table with coordinates to elementized table
+                coords_table_name = f"Coordinates_{selected_table}" if selected_table else "Coordinates_Table"
+                st.session_state.tables[coords_table_name] = final_df.copy()
+                st.session_state.table_name_map[coords_table_name] = coords_table_name
+                st.success(f"✅ **Auto-saved** table with coordinates as: **{coords_table_name}**")
+                st.write(f"📊 **Table contains:** {len(final_df)} rows, {len(final_df.columns)} columns (including Latitude & Longitude)")
+        else:
+            # If coordinate generation is checked but no valid data
+            if selected_table and not df.empty:
+                st.session_state.final_df = df.copy()
+            else:
+                st.session_state.final_df = pd.DataFrame()
     else:
-        st.session_state.final_df = pd.DataFrame()
+        # If coordinate generation is not checked, use the selected table or elementized data
+        if flag == 1 and 'final_df' in locals():
+            st.session_state.final_df = final_df.copy()
+        elif selected_table and not df.empty:
+            st.session_state.final_df = df.copy()
+        else:
+            st.session_state.final_df = pd.DataFrame()
 
 # Descriptive Tab
 with tabs[2]:
@@ -878,9 +942,11 @@ with tabs[2]:
                     temp_df_facility = st.session_state.tables[facility_analysis_table].copy()
                     st.write(f"📋 **Analyzing table: {facility_analysis_table}**")
                     
-                    # Check if FacilityMatched column already exists and drop it to avoid conflicts
-                    if 'FacilityMatched' in temp_df_facility.columns:
-                        temp_df_facility = temp_df_facility.drop(columns=['FacilityMatched'])
+                    # Check if facility matched columns already exist and drop them to avoid conflicts
+                    columns_to_drop = ['FacilityMatched', 'EDFacilityMatched', 'LTCFacilityMatched']
+                    existing_columns = [col for col in columns_to_drop if col in temp_df_facility.columns]
+                    if existing_columns:
+                        temp_df_facility = temp_df_facility.drop(columns=existing_columns)
                     
                     st.write("**Column Selection:**")
                     
@@ -895,7 +961,7 @@ with tabs[2]:
                         key="postal_code_col_select"
                     )
                     
-                    st.write("**Upload ED Facility Files:**")
+                    st.write("**Upload Facility Files:**")
                     col1, col2 = st.columns(2)
                     
                     with col1:
@@ -907,9 +973,9 @@ with tabs[2]:
                         )
                         
                     with col2:
-                        st.write("**Non-Unique ED Facilities File**")
+                        st.write("**Non-Unique / Long Term Care (LTC) Facilities File**")
                         secondary_facilities_file = st.file_uploader(
-                            "Upload CSV with non-unique ED facility postal codes:",
+                            "Upload CSV with non-unique / long term care facility postal codes:",
                             type="csv",
                             key="secondary_facilities_upload"
                         )
@@ -917,39 +983,44 @@ with tabs[2]:
                     # Check facility matches
                     def check_facility_match(postal_code_at_visit, primary_facilities_df, secondary_facilities_df):
                         """
-                        Check if a postal code matches ED facility postal codes.
+                        Check if a postal code matches Primary and Secondary facility postal codes using two-step logic.
                         
                         Args:
                             postal_code_at_visit: Postal code to check
-                            primary_facilities_df: DataFrame with ED facility postal codes
-                            secondary_facilities_df: DataFrame with non-unique ED facility postal codes
+                            primary_facilities_df: DataFrame with Primary facility postal codes
+                            secondary_facilities_df: DataFrame with Secondary facility postal codes
                             
                         Returns:
-                            str: "Yes" if match found, "No" if no match
+                            tuple: (EDFacilityMatched, LTCFacilityMatched) both as "Yes" or "No"
                         """
                         if pd.isna(postal_code_at_visit):
-                            return "No"
+                            return ("No", "No")
                         
                         # Clean and normalize postal code
                         postal_code_clean = str(postal_code_at_visit).strip().upper().replace(" ", "")
                         
-                        # Check primary facilities
+                        # First check: Primary facilities (ED Facilities)
+                        ed_facility_matched = "No"
                         if primary_facilities_df is not None and not primary_facilities_df.empty:
                             for col in primary_facilities_df.columns:
                                 if 'postal' in col.lower() or 'code' in col.lower():
                                     primary_codes = primary_facilities_df[col].dropna().astype(str).str.strip().str.upper().str.replace(" ", "")
                                     if postal_code_clean in primary_codes.values:
-                                        return "Yes"
+                                        ed_facility_matched = "Yes"
+                                        break
                         
-                        # Check secondary facilities
-                        if secondary_facilities_df is not None and not secondary_facilities_df.empty:
-                            for col in secondary_facilities_df.columns:
-                                if 'postal' in col.lower() or 'code' in col.lower():
-                                    secondary_codes = secondary_facilities_df[col].dropna().astype(str).str.strip().str.upper().str.replace(" ", "")
-                                    if postal_code_clean in secondary_codes.values:
-                                        return "Yes"
+                        # Second check: Only if first check is "Yes", then check Secondary facilities (LTC Facilities)
+                        ltc_facility_matched = "No"
+                        if ed_facility_matched == "Yes":
+                            if secondary_facilities_df is not None and not secondary_facilities_df.empty:
+                                for col in secondary_facilities_df.columns:
+                                    if 'postal' in col.lower() or 'code' in col.lower():
+                                        secondary_codes = secondary_facilities_df[col].dropna().astype(str).str.strip().str.upper().str.replace(" ", "")
+                                        if postal_code_clean in secondary_codes.values:
+                                            ltc_facility_matched = "Yes"
+                                            break
                         
-                        return "No"
+                        return (ed_facility_matched, ltc_facility_matched)
                     
                     # Process facility matching if files are uploaded
                     if primary_facilities_file is not None or secondary_facilities_file is not None:
@@ -969,33 +1040,49 @@ with tabs[2]:
                                 st.dataframe(secondary_df.head())
                             
                             if st.button("🔍 Check Facility Matches", key="check_facility_btn"):
-                                # Apply facility matching function
-                                temp_df_facility['FacilityMatched'] = temp_df_facility[selected_postal_col].apply(
+                                # Apply facility matching function - returns tuple (EDFacilityMatched, LTCFacilityMatched)
+                                facility_results = temp_df_facility[selected_postal_col].apply(
                                     lambda x: check_facility_match(x, primary_df, secondary_df)
+                                )
+                                
+                                # Split tuple results into separate columns
+                                temp_df_facility[['EDFacilityMatched', 'LTCFacilityMatched']] = pd.DataFrame(
+                                    facility_results.tolist(), index=temp_df_facility.index
                                 )
                                 
                                 # Display results
                                 st.write("**Facility Matching Results:**")
-                                match_summary = temp_df_facility['FacilityMatched'].value_counts()
                                 
-                                col_stats1, col_stats2, col_stats3 = st.columns(3)
+                                # Calculate summary values
+                                ed_match_summary = temp_df_facility['EDFacilityMatched'].value_counts()
+                                ltc_match_summary = temp_df_facility['LTCFacilityMatched'].value_counts()
+                                
+                                col_stats1, col_stats2, col_stats3, col_stats4, col_stats5 = st.columns(5)
                                 with col_stats1:
                                     total_records = len(temp_df_facility)
                                     st.metric("Total Records", total_records)
                                 
                                 with col_stats2:
-                                    matched_count = match_summary.get("Yes", 0)
-                                    st.metric("Facility Matches", matched_count)
+                                    ed_matched_count = ed_match_summary.get("Yes", 0)
+                                    st.metric("ED Facility Matches", ed_matched_count)
                                 
                                 with col_stats3:
-                                    match_rate = (matched_count / total_records * 100) if total_records > 0 else 0
-                                    st.metric("Match Rate", f"{match_rate:.1f}%")
+                                    ed_match_rate = (ed_matched_count / total_records * 100) if total_records > 0 else 0
+                                    st.metric("ED Match Rate", f"{ed_match_rate:.1f}%")
+                                
+                                with col_stats4:
+                                    ltc_matched_count = ltc_match_summary.get("Yes", 0)
+                                    st.metric("LTC Facility Matches", ltc_matched_count)
+                                
+                                with col_stats5:
+                                    ltc_match_rate = (ltc_matched_count / total_records * 100) if total_records > 0 else 0
+                                    st.metric("LTC Match Rate", f"{ltc_match_rate:.1f}%")
                                 
                                 st.dataframe(temp_df_facility)
                                 
                                 # Save results back to original table
                                 st.session_state.tables[facility_analysis_table] = temp_df_facility.copy()
-                                st.success(f"✅ ED Facility matching results saved to table: **{facility_analysis_table}**")
+                                st.success(f"✅ ED and LTC Facility matching results saved to table: **{facility_analysis_table}**")
                         
                         except Exception as e:
                             st.error(f"❌ Error processing facility files: {str(e)}")
@@ -1007,74 +1094,78 @@ with tabs[2]:
             else:
                 st.warning("⚠️ No tables available for analysis. Please upload and process data first.")
 
-        # COMMENTED OUT - Distance Moved Between Address Changes function
-        # if st.checkbox("📍 Distance Moved Between Address Changes"):
-        #     # Check if required columns exist
-        #     if 'Latitude' not in temp_df.columns or 'Longitude' not in temp_df.columns:
-        #         st.error("❌ Latitude and Longitude columns are required for distance calculation. Please ensure coordinates are generated first.")
-        #     else:
-        #         # Let user select the date column for chronological sorting
-        #         potential_date_cols = []
-        #         for col in temp_df.columns:
-        #             # Check if column might be a date column
-        #             if any(keyword in col.lower() for keyword in ['date', 'time', 'start', 'end', 'created', 'updated']):
-        #                 potential_date_cols.append(col)
-        #             # Also check data type
-        #             elif pd.api.types.is_datetime64_any_dtype(temp_df[col]):
-        #                 if col not in potential_date_cols:
-        #                     potential_date_cols.append(col)
-        #         
-        #         if not potential_date_cols:
-        #             st.error("❌ **Date column is required for analysis!**")
-        #             st.warning("⚠️ No date columns found for chronological sorting. Distance calculation requires a date column to order address changes chronologically.")
-        #             st.info("💡 **Tip:** Make sure your dataset contains columns with 'date', 'time', 'start', 'end', 'created', or 'updated' in their names, or columns with datetime data types.")
-        #         else:
-        #             st.write("**Date Column Selection:**")
-        #             selected_date_col = st.selectbox(
-        #                 "Choose date column for chronological ordering of addresses:", 
-        #                 potential_date_cols,
-        #                 key="distance_date_col"
-        #             )
-        #             
-        #             # Convert to datetime if needed
-        #             if not pd.api.types.is_datetime64_any_dtype(temp_df[selected_date_col]):
-        #                 try:
-        #                     temp_df[selected_date_col] = pd.to_datetime(temp_df[selected_date_col])
-        #                 except:
-        #                     st.error(f"❌ Unable to convert {selected_date_col} to datetime format.")
-        #                     selected_date_col = None
-        #             
-        #             if selected_date_col:
-        #                 def compute_move_distances(group):
-        #                     group = group.sort_values(selected_date_col)
-        #                     coords = list(zip(group["Latitude"], group["Longitude"]))
-        #                     distances = [0]
-        #                     for i in range(1, len(coords)):
-        #                         if None not in coords[i] and None not in coords[i - 1]:
-        #                             distances.append(geodesic(coords[i - 1], coords[i]).km)
-        #                         else:
-        #                             distances.append(None)
-        #                     return pd.Series(distances, index=group.index)
+        
+        if st.checkbox("📍 Distance Moved Between Address Changes"):
+            # Check if required columns exist
+            if 'Latitude' not in temp_df.columns or 'Longitude' not in temp_df.columns:
+                st.error("❌ Latitude and Longitude columns are required for distance calculation. Please ensure coordinates are generated first.")
+            else:
+                # Let user select the date column for chronological sorting
+                potential_date_cols = []
+                for col in temp_df.columns:
+                    # Check if column might be a date column
+                    if any(keyword in col.lower() for keyword in ['date', 'time', 'start', 'end', 'created', 'updated']):
+                        potential_date_cols.append(col)
+                    # Also check data type
+                    elif pd.api.types.is_datetime64_any_dtype(temp_df[col]):
+                        if col not in potential_date_cols:
+                            potential_date_cols.append(col)
+                
+                if not potential_date_cols:
+                    st.error("❌ **Date column is required for analysis!**")
+                    st.warning("⚠️ No date columns found for chronological sorting. Distance calculation requires a date column to order address changes chronologically.")
+                    st.info("💡 **Tip:** Make sure your dataset contains columns with 'date', 'time', 'start', 'end', 'created', or 'updated' in their names, or columns with datetime data types.")
+                else:
+                    st.write("**Date Column Selection:**")
+                    selected_date_col = st.selectbox(
+                        "Choose date column for chronological ordering of addresses:", 
+                        potential_date_cols,
+                        key="distance_date_col"
+                    )
+                    
+                    # Convert to datetime if needed
+                    if not pd.api.types.is_datetime64_any_dtype(temp_df[selected_date_col]):
+                        try:
+                            temp_df[selected_date_col] = pd.to_datetime(temp_df[selected_date_col])
+                        except:
+                            st.error(f"❌ Unable to convert {selected_date_col} to datetime format.")
+                            selected_date_col = None
+                    
+                    if selected_date_col:
+                        def compute_move_distances(group):
+                            group = group.sort_values(selected_date_col)
+                            coords = list(zip(group["Latitude"], group["Longitude"]))
+                            distances = [0]
+                            for i in range(1, len(coords)):
+                                if None not in coords[i] and None not in coords[i - 1]:
+                                    distances.append(geodesic(coords[i - 1], coords[i]).km)
+                                else:
+                                    distances.append(None)
+                            return pd.Series(distances, index=group.index)
 
-        #                 temp_df["MoveDistance(KM)"] = temp_df.groupby("ClientID").apply(compute_move_distances).reset_index(level=0, drop=True).round(1)
-        #                 
-        #                 # Show summary statistics
-        #                 st.write("**Distance Movement Summary:**")
-        #                 col1, col2, col3 = st.columns(3)
-        #                 
-        #                 with col1:
-        #                     total_moves = (temp_df['MoveDistance(KM)'] > 0).sum()
-        #                     st.metric("Total Address Changes", total_moves)
-        #                 
-        #                 with col2:
-        #                     avg_distance = temp_df[temp_df['MoveDistance(KM)'] > 0]['MoveDistance(KM)'].mean()
-        #                     st.metric("Average Distance (KM)", f"{avg_distance:.2f}" if not pd.isna(avg_distance) else "N/A")
-        #                 
-        #                 with col3:
-        #                     max_distance = temp_df['MoveDistance(KM)'].max()
-        #                     st.metric("Max Distance (KM)", f"{max_distance:.2f}" if not pd.isna(max_distance) else "N/A")
-        #                 
-        #                 st.dataframe(temp_df)
+                        temp_df["MoveDistance(KM)"] = temp_df.groupby("ClientID").apply(compute_move_distances).reset_index(level=0, drop=True).round(1)
+                        
+                        # Show summary statistics
+                        st.write("**Distance Movement Summary:**")
+                        col1, col2, col3 = st.columns(3)
+                        
+                        with col1:
+                            total_moves = (temp_df['MoveDistance(KM)'] > 0).sum()
+                            st.metric("Total Address Changes", total_moves)
+                        
+                        with col2:
+                            avg_distance = temp_df[temp_df['MoveDistance(KM)'] > 0]['MoveDistance(KM)'].mean()
+                            st.metric("Average Distance (KM)", f"{avg_distance:.2f}" if not pd.isna(avg_distance) else "N/A")
+                        
+                        with col3:
+                            max_distance = temp_df['MoveDistance(KM)'].max()
+                            st.metric("Max Distance (KM)", f"{max_distance:.2f}" if not pd.isna(max_distance) else "N/A")
+                        
+                        st.dataframe(temp_df)
+                        
+                        # Save results back to original table
+                        st.session_state.tables[analysis_table] = temp_df.copy()
+                        st.success(f"✅ Distance Movement analysis results saved to table: **{analysis_table}**")
 
     st.subheader("📊 Descriptive Analysis (Patient Based)")
     
@@ -1433,6 +1524,592 @@ with tabs[3]:
 # Modeling Tab
 with tabs[4]:
     st.subheader("💻 Machine Learning Models")
+    
+    if not st.session_state.tables:
+        st.warning("⚠️ Please upload a dataset to begin modeling.")
+    else:
+        # Dataset selection
+        st.write("### 📊 Dataset Selection")
+        modeling_table = st.selectbox(
+            "Choose a table for modeling:",
+            list(st.session_state.tables.keys()),
+            key="modeling_table_select"
+        )
+        
+        if modeling_table:
+            modeling_df = st.session_state.tables[modeling_table].copy()
+            st.write(f"**Selected Table:** {modeling_table}")
+            st.write(f"**Shape:** {modeling_df.shape[0]} rows × {modeling_df.shape[1]} columns")
+            
+            # Show basic info about the dataset
+            with st.expander("📋 Dataset Overview"):
+                st.dataframe(modeling_df.head())
+                
+                # Column types analysis
+                col_types = modeling_df.dtypes.value_counts()
+                st.write("**Column Types:**")
+                st.write(col_types)
+            
+            # Target variable selection
+            st.write("### 🎯 Target Variable Selection")
+            target_column = st.selectbox(
+                "Choose target variable (dependent variable):",
+                modeling_df.columns.tolist(),
+                key="target_column_select"
+            )
+            
+            if target_column:
+                # Feature selection
+                st.write("### 🔧 Feature Selection")
+                available_features = [col for col in modeling_df.columns if col != target_column]
+                selected_features = st.multiselect(
+                    "Choose features (independent variables):",
+                    available_features,
+                    default=available_features[:5] if len(available_features) >= 5 else available_features,
+                    key="feature_selection"
+                )
+                
+                if selected_features:
+                    # Problem type detection
+                    target_nunique = modeling_df[target_column].nunique()
+                    is_classification = target_nunique <= 10 and modeling_df[target_column].dtype in ['object', 'category'] or target_nunique <= 2
+                    
+                    if is_classification:
+                        problem_type = "Classification"
+                        st.success(f"🎯 **Problem Type Detected:** {problem_type} ({target_nunique} unique classes)")
+                    else:
+                        problem_type = "Regression"
+                        st.info(f"📈 **Problem Type Detected:** {problem_type}")
+                    
+                    # Model selection
+                    st.write("### 🤖 Model Selection")
+                    st.write("Based on the dataset's problem type, the following models are available:")
+
+                    if is_classification:
+                        available_models = [
+                            "Logistic Regression",
+                            "RandomForest",
+                            "XGBoost",
+                            "CatBoost",
+                            "LightGBM"
+                        ]
+                    else:
+                        available_models = [
+                            "RandomForest",
+                            "XGBoost",
+                            "CatBoost",
+                            "LightGBM"
+                        ]
+                    
+                    selected_model = st.selectbox(
+                        "Choose a model:",
+                        available_models,
+                        key="model_selection"
+                    )
+                    
+                    # Train-test split configuration
+                    st.write("### 📊 Train-Test Split Configuration")
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        test_size = st.slider("Test size (%)", 10, 50, 20, key="test_size") / 100
+                    with col2:
+                        random_state = st.number_input("Random state", 0, 1000, 42, key="random_state")
+                    
+                    # Hyperparameter tuning
+                    st.write("### ⚙️ Hyperparameter Configuration")
+                    use_grid_search = st.checkbox("Enable hyperparameter tuning (Grid Search)", key="use_grid_search")
+                    
+                    # Model-specific hyperparameters
+                    hyperparams = {}
+                    
+                    if selected_model == "Logistic Regression":
+                        st.write("**Logistic Regression Parameters:**")
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            if use_grid_search:
+                                hyperparams['C'] = st.multiselect("C (Regularization)", [0.01, 0.1, 1, 10, 100], default=[1])
+                                hyperparams['max_iter'] = st.multiselect("Max iterations", [100, 500, 1000], default=[1000])
+                            else:
+                                hyperparams['C'] = [st.number_input("C (Regularization)", 0.01, 100.0, 1.0)]
+                                hyperparams['max_iter'] = [st.number_input("Max iterations", 100, 2000, 1000)]
+                        with col2:
+                            if use_grid_search:
+                                hyperparams['solver'] = st.multiselect("Solver", ['liblinear', 'lbfgs'], default=['lbfgs'])
+                            else:
+                                hyperparams['solver'] = [st.selectbox("Solver", ['liblinear', 'lbfgs'], index=1)]
+                    
+                    elif selected_model == "RandomForest":
+                        st.write("**RandomForest Parameters:**")
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            if use_grid_search:
+                                hyperparams['n_estimators'] = st.multiselect("Number of estimators", [50, 100, 200, 300], default=[100])
+                                hyperparams['max_depth'] = st.multiselect("Max depth", [3, 5, 10, None], default=[10])
+                            else:
+                                hyperparams['n_estimators'] = [st.number_input("Number of estimators", 10, 500, 100)]
+                                hyperparams['max_depth'] = [st.number_input("Max depth (0 for None)", 0, 50, 10)]
+                                hyperparams['max_depth'] = [None if hyperparams['max_depth'][0] == 0 else hyperparams['max_depth'][0]]
+                        with col2:
+                            if use_grid_search:
+                                hyperparams['min_samples_split'] = st.multiselect("Min samples split", [2, 5, 10], default=[2])
+                                hyperparams['min_samples_leaf'] = st.multiselect("Min samples leaf", [1, 2, 4], default=[1])
+                            else:
+                                hyperparams['min_samples_split'] = [st.number_input("Min samples split", 2, 20, 2)]
+                                hyperparams['min_samples_leaf'] = [st.number_input("Min samples leaf", 1, 10, 1)]
+                    
+                    elif selected_model == "XGBoost":
+                        st.write("**XGBoost Parameters:**")
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            if use_grid_search:
+                                hyperparams['n_estimators'] = st.multiselect("Number of estimators", [50, 100, 200], default=[100])
+                                hyperparams['max_depth'] = st.multiselect("Max depth", [3, 5, 7], default=[5])
+                            else:
+                                hyperparams['n_estimators'] = [st.number_input("Number of estimators", 10, 500, 100)]
+                                hyperparams['max_depth'] = [st.number_input("Max depth", 1, 20, 5)]
+                        with col2:
+                            if use_grid_search:
+                                hyperparams['learning_rate'] = st.multiselect("Learning rate", [0.01, 0.1, 0.2], default=[0.1])
+                                hyperparams['subsample'] = st.multiselect("Subsample", [0.8, 0.9, 1.0], default=[1.0])
+                            else:
+                                hyperparams['learning_rate'] = [st.number_input("Learning rate", 0.01, 1.0, 0.1)]
+                                hyperparams['subsample'] = [st.number_input("Subsample", 0.1, 1.0, 1.0)]
+                    
+                    elif selected_model == "CatBoost":
+                        st.write("**CatBoost Parameters:**")
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            if use_grid_search:
+                                hyperparams['iterations'] = st.multiselect("Iterations", [50, 100, 200], default=[100])
+                                hyperparams['depth'] = st.multiselect("Depth", [4, 6, 8], default=[6])
+                            else:
+                                hyperparams['iterations'] = [st.number_input("Iterations", 10, 500, 100)]
+                                hyperparams['depth'] = [st.number_input("Depth", 1, 16, 6)]
+                        with col2:
+                            if use_grid_search:
+                                hyperparams['learning_rate'] = st.multiselect("Learning rate", [0.01, 0.1, 0.2], default=[0.1])
+                            else:
+                                hyperparams['learning_rate'] = [st.number_input("Learning rate", 0.01, 1.0, 0.1)]
+                    
+                    elif selected_model == "LightGBM":
+                        st.write("**LightGBM Parameters:**")
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            if use_grid_search:
+                                hyperparams['n_estimators'] = st.multiselect("Number of estimators", [50, 100, 200], default=[100])
+                                hyperparams['max_depth'] = st.multiselect("Max depth", [3, 5, 7], default=[5])
+                            else:
+                                hyperparams['n_estimators'] = [st.number_input("Number of estimators", 10, 500, 100)]
+                                hyperparams['max_depth'] = [st.number_input("Max depth", 1, 20, 5)]
+                        with col2:
+                            if use_grid_search:
+                                hyperparams['learning_rate'] = st.multiselect("Learning rate", [0.01, 0.1, 0.2], default=[0.1])
+                                hyperparams['num_leaves'] = st.multiselect("Number of leaves", [15, 31, 63], default=[31])
+                            else:
+                                hyperparams['learning_rate'] = [st.number_input("Learning rate", 0.01, 1.0, 0.1)]
+                                hyperparams['num_leaves'] = [st.number_input("Number of leaves", 10, 300, 31)]
+                    
+                    # Model training button
+                    if st.button("🚀 Train Model", key="train_model_btn"):
+                        try:
+                            with st.spinner("Training model... This may take a few minutes."):
+                                # Prepare data
+                                X = modeling_df[selected_features].copy()
+                                y = modeling_df[target_column].copy()
+                                
+                                # Handle missing values more robustly
+                                # For numerical columns, fill with mean
+                                numerical_cols = X.select_dtypes(include=[np.number]).columns
+                                for col in numerical_cols:
+                                    X[col] = X[col].fillna(X[col].mean())
+                                
+                                # For categorical columns, fill with mode
+                                categorical_cols = X.select_dtypes(include=['object', 'category']).columns
+                                for col in categorical_cols:
+                                    mode_value = X[col].mode()
+                                    if len(mode_value) > 0:
+                                        X[col] = X[col].fillna(mode_value[0])
+                                    else:
+                                        X[col] = X[col].fillna('Unknown')
+                                
+                                # Handle target variable encoding for classification
+                                y_encoded = y.copy()
+                                target_encoder = None
+                                if is_classification and y.dtype in ['object', 'category']:
+                                    from sklearn.preprocessing import LabelEncoder
+                                    target_encoder = LabelEncoder()
+                                    y_encoded = target_encoder.fit_transform(y_encoded)
+                                
+                                # Handle categorical variables in features
+                                categorical_features = X.select_dtypes(include=['object', 'category']).columns.tolist()
+                                numerical_features = X.select_dtypes(include=[np.number]).columns.tolist()
+                                
+                                # Create preprocessor
+                                transformers = []
+                                if numerical_features:
+                                    transformers.append(('num', StandardScaler(), numerical_features))
+                                if categorical_features:
+                                    transformers.append(('cat', OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore'), categorical_features))
+                                
+                                if not transformers:
+                                    st.error("❌ No valid features found for modeling. Please check your data.")
+                                else:
+                                    preprocessor = ColumnTransformer(transformers=transformers, remainder='passthrough')
+                                    
+                                    # Split data
+                                    try:
+                                        if is_classification and len(np.unique(y_encoded)) > 1:
+                                            X_train, X_test, y_train, y_test = train_test_split(
+                                                X, y_encoded, test_size=test_size, random_state=random_state, stratify=y_encoded
+                                            )
+                                        else:
+                                            X_train, X_test, y_train, y_test = train_test_split(
+                                                X, y_encoded, test_size=test_size, random_state=random_state
+                                            )
+                                    except ValueError as e:
+                                        st.error(f"❌ Error splitting data: {str(e)}")
+                                        st.write("This might be due to insufficient samples in some classes. Try using a different target variable or larger dataset.")
+                                    else:
+                                        # Preprocess data
+                                        try:
+                                            X_train_processed = preprocessor.fit_transform(X_train)
+                                            X_test_processed = preprocessor.transform(X_test)
+                                            
+                                            # Ensure data is in the right format
+                                            if hasattr(X_train_processed, 'toarray'):
+                                                X_train_processed = X_train_processed.toarray()
+                                            if hasattr(X_test_processed, 'toarray'):
+                                                X_test_processed = X_test_processed.toarray()
+                                                
+                                        except Exception as e:
+                                            st.error(f"❌ Error preprocessing data: {str(e)}")
+                                            st.write("**Troubleshooting tips:**")
+                                            st.write("- Check for columns with all missing values")
+                                            st.write("- Ensure categorical columns don't have too many unique values")
+                                            st.write("- Try selecting different features")
+                                        else:
+                                            # Initialize model
+                                            if selected_model == "Logistic Regression":
+                                                base_model = LogisticRegression(random_state=random_state)
+                                            elif selected_model == "RandomForest":
+                                                if is_classification:
+                                                    base_model = RandomForestClassifier(random_state=random_state)
+                                                else:
+                                                    base_model = RandomForestRegressor(random_state=random_state)
+                                            elif selected_model == "XGBoost":
+                                                if is_classification:
+                                                    base_model = xgb.XGBClassifier(random_state=random_state)
+                                                else:
+                                                    base_model = xgb.XGBRegressor(random_state=random_state)
+                                            elif selected_model == "CatBoost":
+                                                if is_classification:
+                                                    base_model = CatBoostClassifier(random_state=random_state, verbose=False)
+                                                else:
+                                                    base_model = lgb.LGBMRegressor(random_state=random_state)  # Using LightGBM for regression as fallback
+                                            elif selected_model == "LightGBM":
+                                                if is_classification:
+                                                    base_model = lgb.LGBMClassifier(random_state=random_state)
+                                                else:
+                                                    base_model = lgb.LGBMRegressor(random_state=random_state)
+                                            
+                                            # Train model with or without hyperparameter tuning
+                                            if use_grid_search:
+                                                st.write("🔍 **Performing hyperparameter tuning...**")
+                                                grid_search = GridSearchCV(
+                                                    base_model, 
+                                                    hyperparams, 
+                                                    cv=3, 
+                                                    scoring='accuracy' if is_classification else 'r2',
+                                                    n_jobs=-1
+                                                )
+                                                grid_search.fit(X_train_processed, y_train)
+                                                best_model = grid_search.best_estimator_
+                                                st.success(f"✅ Best parameters: {grid_search.best_params_}")
+                                            else:
+                                                # Use single parameter values
+                                                single_params = {k: v[0] for k, v in hyperparams.items()}
+                                                best_model = base_model.set_params(**single_params)
+                                                best_model.fit(X_train_processed, y_train)
+                                            
+                                            # Make predictions
+                                            y_pred = best_model.predict(X_test_processed)
+                                            
+                                            # Convert predictions back to original labels if needed
+                                            y_pred_original = y_pred.copy()
+                                            y_test_original = y_test.copy()
+                                            y_train_original = y_train.copy()
+                                            
+                                            if target_encoder is not None:
+                                                y_pred_original = target_encoder.inverse_transform(y_pred)
+                                                y_test_original = target_encoder.inverse_transform(y_test)
+                                                y_train_pred = best_model.predict(X_train_processed)
+                                                y_train_pred_original = target_encoder.inverse_transform(y_train_pred)
+                                                y_train_original = target_encoder.inverse_transform(y_train)
+                                            else:
+                                                y_train_pred = best_model.predict(X_train_processed)
+                                                y_train_pred_original = y_train_pred.copy()
+                                            
+                                            # Calculate metrics
+                                            st.write("### 📊 Model Evaluation Metrics")
+                                            
+                                            col1, col2 = st.columns(2)
+                                            
+                                            with col1:
+                                                st.write("**Training Set Performance:**")
+                                                
+                                                if is_classification:
+                                                    train_accuracy = accuracy_score(y_train, y_train_pred)
+                                                    train_precision = precision_score(y_train, y_train_pred, average='weighted', zero_division=0)
+                                                    train_recall = recall_score(y_train, y_train_pred, average='weighted', zero_division=0)
+                                                    train_f1 = f1_score(y_train, y_train_pred, average='weighted', zero_division=0)
+                                                    
+                                                    st.metric("Accuracy", f"{train_accuracy:.4f}")
+                                                    st.metric("Precision", f"{train_precision:.4f}")
+                                                    st.metric("Recall", f"{train_recall:.4f}")
+                                                    st.metric("F1-Score", f"{train_f1:.4f}")
+                                                else:
+                                                    from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+                                                    train_r2 = r2_score(y_train, y_train_pred)
+                                                    train_mse = mean_squared_error(y_train, y_train_pred)
+                                                    train_mae = mean_absolute_error(y_train, y_train_pred)
+                                                    
+                                                    st.metric("R² Score", f"{train_r2:.4f}")
+                                                    st.metric("MSE", f"{train_mse:.4f}")
+                                                    st.metric("MAE", f"{train_mae:.4f}")
+                                                    st.metric("RMSE", f"{np.sqrt(train_mse):.4f}")
+                                
+                                with col2:
+                                    st.write("**Test Set Performance:**")
+                                    
+                                    if is_classification:
+                                        test_accuracy = accuracy_score(y_test, y_pred)
+                                        test_precision = precision_score(y_test, y_pred, average='weighted', zero_division=0)
+                                        test_recall = recall_score(y_test, y_pred, average='weighted', zero_division=0)
+                                        test_f1 = f1_score(y_test, y_pred, average='weighted', zero_division=0)
+                                        
+                                        st.metric("Accuracy", f"{test_accuracy:.4f}")
+                                        st.metric("Precision", f"{test_precision:.4f}")
+                                        st.metric("Recall", f"{test_recall:.4f}")
+                                        st.metric("F1-Score", f"{test_f1:.4f}")
+                                        
+                                    else:
+                                        test_r2 = r2_score(y_test, y_pred)
+                                        test_mse = mean_squared_error(y_test, y_pred)
+                                        test_mae = mean_absolute_error(y_test, y_pred)
+                                        
+                                        st.metric("R² Score", f"{test_r2:.4f}")
+                                        st.metric("MSE", f"{test_mse:.4f}")
+                                        st.metric("MAE", f"{test_mae:.4f}")
+                                        st.metric("RMSE", f"{np.sqrt(test_mse):.4f}")
+                                
+                                # Model Visualizations 
+                                viz_col, empty_col = st.columns([0.75, 0.25])
+                                
+                                with viz_col:
+                                    # Classification-specific visualizations
+                                    if is_classification:
+                                        # Confusion Matrix
+                                        st.write("**Confusion Matrix:**")
+                                        cm = confusion_matrix(y_test, y_pred)
+                                        
+                                        # Create labels for confusion matrix
+                                        if target_encoder is not None:
+                                            labels = target_encoder.classes_
+                                        else:
+                                            labels = np.unique(np.concatenate([y_test, y_pred]))
+                                        
+                                        fig, ax = plt.subplots(figsize=(8, 6))
+                                        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=ax, 
+                                                   xticklabels=labels, yticklabels=labels)
+                                        ax.set_xlabel('Predicted')
+                                        ax.set_ylabel('Actual')
+                                        ax.set_title('Confusion Matrix')
+                                        plt.tight_layout()
+                                        st.pyplot(fig)
+                                        
+                                        # Classification Report
+                                        st.write("**Detailed Classification Report:**")
+                                        try:
+                                            if target_encoder is not None:
+                                                report = classification_report(y_test, y_pred, 
+                                                                             target_names=target_encoder.classes_, 
+                                                                             output_dict=True, zero_division=0)
+                                            else:
+                                                report = classification_report(y_test, y_pred, output_dict=True, zero_division=0)
+                                            report_df = pd.DataFrame(report).transpose()
+                                            st.dataframe(report_df)
+                                        except Exception as e:
+                                            st.write(f"Classification report could not be generated: {str(e)}")
+                                    
+                                    # Regression-specific visualizations 
+                                    else:
+                                        # Residual Plot
+                                        st.write("**Residual Plot:**")
+                                        residuals = y_test - y_pred
+                                        fig, ax = plt.subplots(figsize=(10, 6))
+                                        ax.scatter(y_pred, residuals, alpha=0.6)
+                                        ax.axhline(y=0, color='red', linestyle='--')
+                                        ax.set_xlabel('Predicted Values')
+                                        ax.set_ylabel('Residuals')
+                                        ax.set_title('Residual Plot')
+                                        plt.tight_layout()
+                                        st.pyplot(fig)
+                                        
+                                        # Actual vs Predicted Plot
+                                        st.write("**Actual vs Predicted:**")
+                                        fig, ax = plt.subplots(figsize=(10, 6))
+                                        ax.scatter(y_test, y_pred, alpha=0.6)
+                                        ax.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'red', lw=2)
+                                        ax.set_xlabel('Actual Values')
+                                        ax.set_ylabel('Predicted Values')
+                                        ax.set_title('Actual vs Predicted')
+                                        plt.tight_layout()
+                                        st.pyplot(fig)
+                                
+                                # Feature Importance (if available) 
+                                if hasattr(best_model, 'feature_importances_'):
+                                    feat_col, feat_empty = st.columns([0.75, 0.25])
+                                    
+                                    with feat_col:
+                                        st.write("### 📈 Feature Importance")
+                                        
+                                        # Get feature names after preprocessing
+                                        try:
+                                            feature_names = []
+                                            
+                                            # Add numerical feature names
+                                            if numerical_features:
+                                                feature_names.extend(numerical_features)
+                                            
+                                            # Add categorical feature names (after one-hot encoding)
+                                            if categorical_features and 'cat' in preprocessor.named_transformers_:
+                                                try:
+                                                    cat_feature_names = preprocessor.named_transformers_['cat'].get_feature_names_out(categorical_features)
+                                                    feature_names.extend(cat_feature_names)
+                                                except Exception:
+                                                    # Fallback: use original categorical feature names
+                                                    feature_names.extend([f"{cat_feat}_encoded" for cat_feat in categorical_features])
+                                            
+                                            # If we still don't have the right number of features, use generic names
+                                            if len(feature_names) != len(best_model.feature_importances_):
+                                                feature_names = [f"Feature_{i}" for i in range(len(best_model.feature_importances_))]
+                                            
+                                            importance_df = pd.DataFrame({
+                                                'Feature': feature_names,
+                                                'Importance': best_model.feature_importances_
+                                            }).sort_values('Importance', ascending=False).head(15)
+                                            
+                                            fig, ax = plt.subplots(figsize=(10, 8))
+                                            sns.barplot(data=importance_df, x='Importance', y='Feature', ax=ax)
+                                            ax.set_title('Top 15 Feature Importances')
+                                            plt.tight_layout()
+                                            st.pyplot(fig)
+                                            
+                                            st.dataframe(importance_df)
+                                            
+                                        except Exception as e:
+                                            st.warning(f"⚠️ Could not generate feature importance plot: {str(e)}")
+                                            # Show raw feature importances as fallback
+                                            importance_values = best_model.feature_importances_
+                                            st.write("**Feature Importance Values:**")
+                                            for i, importance in enumerate(importance_values[:15]):
+                                                st.write(f"Feature {i}: {importance:.4f}")
+                                
+                                # Save model results
+                                st.write("### 💾 Save Model Results")
+                                
+                                # Prepare results DataFrame using original labels
+                                results_df = pd.DataFrame({
+                                    'Actual': y_test_original,
+                                    'Predicted': y_pred_original,
+                                })
+                                
+                                # Reset index to start from 1 for cleaner display
+                                results_df.reset_index(drop=True, inplace=True)
+                                results_df.index = results_df.index + 1 
+                                results_df.index.name = 'Sample'  
+                                
+                                if is_classification and hasattr(best_model, 'predict_proba'):
+                                    # Add probabilities for classification
+                                    probabilities = best_model.predict_proba(X_test_processed)
+                                    for i, class_label in enumerate(best_model.classes_):
+                                        results_df[f'Probability_{class_label}'] = probabilities[:, i]
+                                
+                                # Model metadata
+                                model_info = {
+                                    'Model': selected_model,
+                                    'Problem_Type': problem_type,
+                                    'Target_Variable': target_column,
+                                    'Features_Used': selected_features,
+                                    'Test_Size': test_size,
+                                    'Random_State': random_state,
+                                    'Hyperparameter_Tuning': use_grid_search,
+                                    'Best_Parameters': grid_search.best_params_ if use_grid_search else single_params,
+                                }
+                                
+                                if is_classification:
+                                    model_info.update({
+                                        'Test_Accuracy': test_accuracy,
+                                        'Test_Precision': test_precision,
+                                        'Test_Recall': test_recall,
+                                        'Test_F1_Score': test_f1
+                                    })
+                                else:
+                                    model_info.update({
+                                        'Test_R2_Score': test_r2,
+                                        'Test_MSE': test_mse,
+                                        'Test_MAE': test_mae,
+                                        'Test_RMSE': np.sqrt(test_mse)
+                                    })
+                                
+                                # Save to session state
+                                model_results_name = f"{modeling_table}_{selected_model}_Results"
+                                st.session_state.tables[model_results_name] = results_df
+                                
+                                # Also save model info as a separate table
+                                model_info_df = pd.DataFrame([model_info])
+                                model_info_name = f"{modeling_table}_{selected_model}_Info"
+                                st.session_state.tables[model_info_name] = model_info_df
+                                
+                                st.success(f"✅ **Model results saved successfully!**")
+                                st.write(f"📊 **Predictions table:** `{model_results_name}`")
+                                st.write(f"📋 **Model info table:** `{model_info_name}`")
+                                
+                                # Display sample results
+                                st.write("**Sample Predictions (First 10 Results):**")
+                                sample_results = results_df.head(10)
+                                st.dataframe(sample_results, use_container_width=True)
+                                
+                                # Download button for results
+                                csv_results = results_df.to_csv(index=False)
+                                st.download_button(
+                                    label="📥 Download Predictions as CSV",
+                                    data=csv_results,
+                                    file_name=f"{model_results_name}.csv",
+                                    mime="text/csv"
+                                )
+                                
+                                csv_info = model_info_df.to_csv(index=False)
+                                st.download_button(
+                                    label="📥 Download Model Info as CSV",
+                                    data=csv_info,
+                                    file_name=f"{model_info_name}.csv",
+                                    mime="text/csv"
+                                )
+                                
+                        except Exception as e:
+                            st.error(f"❌ Error during model training: {str(e)}")
+                            st.write("**Troubleshooting tips:**")
+                            st.write("- Ensure your target variable is appropriate for the problem type")
+                            st.write("- Check for sufficient data in each class (for classification)")
+                            st.write("- Verify that features don't have too many missing values")
+                            st.write("- Try reducing the number of features or using simpler hyperparameters")
+                else:
+                    st.warning("⚠️ Please select at least one feature for modeling.")
+            else:
+                st.warning("⚠️ Please select a target variable to proceed.")
+        else:
+            st.warning("⚠️ Please select a table to begin modeling.")
     
 
 # Final fallback warning
